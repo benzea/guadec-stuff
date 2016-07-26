@@ -1,0 +1,31 @@
+guadec-talks.html is the HTML file of the registration.guadec.org talk list
+schedule is a copy paste from ods, i.e. do:
+ * cat >schedule
+ * copy paste into terminal
+ * hit enter and ctrl+d
+
+ods format:
+ first row: room names
+ after that, the following columns:
+  * day, set current day should just be 1,2,3 for first slot on the day
+  * time: the start time of the slot
+  * n rows for event titles
+ There are some special titles, if these occur then the slot will be ignored for schedule.xml creation:
+  * Lunchbreak
+  * Coffebreak
+  * Closing
+ use on of these or leave all rooms empty to set the end time of the previous slot.
+
+./parse-talks.py guadec-talks.html schedule
+xmllint --format schedule.xml
+
+
+TODO:
+ * decode xml entities in input file
+ * verify schedule.xml is correct
+ * verify ods format is OK
+ * Some missing tags/attributes:
+   - slurp
+   - talk uuid
+   - person ID (probably mandatory even if unused)
+   - …
