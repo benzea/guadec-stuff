@@ -21,7 +21,6 @@ xmllint --format schedule.xml
 
 
 TODO:
- * decode xml entities in input file
  * verify schedule.xml is correct
  * verify ods format is OK
  * Some missing tags/attributes:

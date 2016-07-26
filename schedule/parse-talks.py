@@ -5,6 +5,7 @@ import sys
 import re
 import xml.etree.ElementTree as ET
 import datetime
+import html
 
 version = "1.0"
 # set/list of events to ignore (only used for calculating end times)
@@ -33,11 +34,12 @@ infile = open(sys.argv[1]).read()
 events = []
 
 for talk in talk_re.finditer(infile):
-    title = talk.group('title').strip()
-    summary = talk.group('summary').strip()
+    title = html.unescape(talk.group('title').strip())
+    summary = html.unescape(talk.group('summary').strip())
 
-    author = talk.group('author').strip()
-    coauthors = talk.group('coauthors').strip()
+    author = html.unescape(talk.group('author').strip())
+    coauthors = html.unescape(talk.group('coauthors').strip())
+    print(author, coauthors)
 
     authors = [author, ]
 
@@ -45,7 +47,7 @@ for talk in talk_re.finditer(infile):
         for auth in coauthors.split(', '):
             authors.append(auth.strip())
 
-    authors = [re.match('^(?P<name>[^&]*)(&lt;.*&gt;)?', author).group('name').strip() for author in authors]
+    authors = [re.match('^(?P<name>[^<]*)(<.*>)?', author).group('name').strip() for author in authors]
 
     event = {}
     event['title'] = title
