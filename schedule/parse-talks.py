@@ -7,9 +7,12 @@ import xml.etree.ElementTree as ET
 import datetime
 import html
 
+elsewhere_room = "Elsewhere"
+elsewhere_type = ""
+
 version = "1.0"
 # set/list of events to ignore (only used for calculating end times)
-ignore_events = ['break', 'lunchbreak', 'coffeebreak', 'closing']
+ignore_events = ['END']
 
 # It is rather simple luckily … otherwise it would be smarter to use a proper
 # dom model or so.
@@ -25,13 +28,13 @@ talk_re = re.compile(r'''
 </div>
 ''', re.VERBOSE|re.MULTILINE|re.DOTALL|re.IGNORECASE)
 
-datetimeformat = '%Y-%m-%dT%H:%M:%S%z'
 tzinfo = datetime.timezone(datetime.timedelta(hours=2))
 
 
 infile = open(sys.argv[1]).read()
 
 events = []
+eventid = 1
 
 for talk in talk_re.finditer(infile):
     title = html.unescape(talk.group('title').strip())
@@ -39,7 +42,6 @@ for talk in talk_re.finditer(infile):
 
     author = html.unescape(talk.group('author').strip())
     coauthors = html.unescape(talk.group('coauthors').strip())
-    print(author, coauthors)
 
     authors = [author, ]
 
@@ -49,15 +51,20 @@ for talk in talk_re.finditer(infile):
 
     authors = [re.match('^(?P<name>[^<]*)(<.*>)?', author).group('name').strip() for author in authors]
 
+    # This is a bit weird, but one title contains a ... replace it to … as
+    # libreoffice insists to change it
+    title = title.replace('...', '…')
+
     event = {}
     event['title'] = title
+    event['subtitle'] = None
     event['persons'] = authors
     event['abstract'] = summary
     # Assume english language for everything
     event['language'] = 'eng'
     event['description'] = None
     event['logo'] = None
-    event['type'] = 'lecture' # meeting
+    event['type'] = 'talk'
     event['attachments'] = None
     event['links'] = None
     event['track'] = None
@@ -65,100 +72,249 @@ for talk in talk_re.finditer(infile):
     event['date'] = None
     event['duration'] = None
     event['slug'] = None # Unique identifier for URL?
-    event['id'] = None
-    event['recording'] = { 'license' : 'CC BY-SA 4.0', 'opt_out' : 'false' }
+    event['id'] = eventid
+    event['recording'] = { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' }
+
+    eventid += 1
 
     events.append(event)
 
+# Make sure the these manual events do not change their ID (at least once
+# we feed the data into the streaming website and such)
+eventid = 100
 
 events.append({
     'title' : 'GNOME Foundation Annual General Meeting',
+    'matchby' : 'agm',
+    'subtitle' : None,
+    'logo' : None,
+    'track' : None,
+    'links' : None,
+    'attachments' : None,
     'abstract' : 'The Annual General Meeting of the GNOME Foundation and team reports.',
     'persons' : ['GNOME Board',],
     'language' : 'eng',
     'type' : 'meeting',
+    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
+   'id' : eventid,
 })
+eventid += 1
 
 events.append({
-    'title' : 'Intern Lightning Talks',
+    'title' : 'Intern lightning talks',
+    'subtitle' : None,
+    'logo' : None,
+    'track' : None,
+    'links' : None,
+    'attachments' : None,
     'abstract' : 'Blub.',
     'persons' : ['GSoC and Outreachy Interns',],
     'language' : 'eng',
-    'type' : 'lecture',
+    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
+    'type' : 'talk',
+    'id' : eventid,
 })
+eventid += 1
 
+events.append({
+    'title' : 'Lightning talks',
+    'subtitle' : None,
+    'logo' : None,
+    'track' : None,
+    'links' : None,
+    'attachments' : None,
+    'abstract' : 'Blub.',
+    'persons' : [],
+    'language' : 'eng',
+    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
+    'type' : 'talk',
+    'id' : eventid,
+})
+eventid += 1
 
 events.append({
     'title' : 'Unconference #1',
+    'subtitle' : None,
+    'logo' : None,
+    'track' : None,
+    'links' : None,
+    'attachments' : None,
     'matchby' : 'Unconference #1',
     'abstract' : 'Yet to be announced',
-    'persons' : [],
+    'persons' : ['to be announced'],
     'language' : 'eng',
-    'type' : 'lecture',
+    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
+    'type' : 'talk',
+    'id' : eventid,
+    'slug' : '%i-unconference-1' % eventid,
 })
+eventid += 1
 
 events.append({
     'title' : 'Unconference #2',
+    'subtitle' : None,
+    'logo' : None,
+    'track' : None,
+    'links' : None,
+    'attachments' : None,
     'matchby' : 'Unconference #2',
     'abstract' : 'Yet to be announced',
-    'persons' : [],
+    'persons' : ['to be announced'],
     'language' : 'eng',
-    'type' : 'lecture',
+    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
+    'type' : 'talk',
+    'id' : eventid,
+    'slug' : '%i-unconference-2' % eventid,
 })
+eventid += 1
 
 events.append({
     'title' : 'Unconference #3',
+    'subtitle' : None,
+    'logo' : None,
+    'track' : None,
+    'links' : None,
+    'attachments' : None,
     'matchby' : 'Unconference #3',
     'abstract' : 'Yet to be announced',
-    'persons' : [],
+    'persons' : ['to be announced'],
     'language' : 'eng',
-    'type' : 'lecture',
+    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
+    'type' : 'talk',
+    'id' : eventid,
+    'slug' : '%i-unconference-3' % eventid,
 })
+eventid += 1
 
 events.append({
     'title' : 'Unconference #4',
+    'subtitle' : None,
+    'logo' : None,
+    'track' : None,
+    'links' : None,
+    'attachments' : None,
     'matchby' : 'Unconference #4',
     'abstract' : 'Yet to be announced',
-    'persons' : [],
+    'persons' : ['to be announced'],
     'language' : 'eng',
-    'type' : 'lecture',
+    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
+    'type' : 'talk',
+    'id' : eventid,
+    'slug' : '%i-unconference-4' % eventid,
 })
+eventid += 1
 
 events.append({
     'title' : 'Unconference #5',
+    'subtitle' : None,
+    'logo' : None,
+    'track' : None,
+    'links' : None,
+    'attachments' : None,
     'matchby' : 'Unconference #5',
     'abstract' : 'Yet to be announced',
-    'persons' : [],
+    'persons' : ['to be announced'],
     'language' : 'eng',
-    'type' : 'lecture',
+    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
+    'type' : 'talk',
+    'id' : eventid,
+    'slug' : '%i-unconference-5' % eventid,
 })
+eventid += 1
 
 events.append({
     'title' : 'Unconference #6',
+    'subtitle' : None,
+    'logo' : None,
+    'track' : None,
+    'links' : None,
+    'attachments' : None,
     'matchby' : 'Unconference #6',
     'abstract' : 'Yet to be announced',
-    'persons' : [],
+    'persons' : ['to be announced'],
     'language' : 'eng',
-    'type' : 'lecture',
+    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
+    'type' : 'talk',
+    'id' : eventid,
+    'slug' : '%i-unconference-6' % eventid,
 })
+eventid += 1
 
 events.append({
     'title' : 'Keynote 1',
+    'subtitle' : None,
+    'logo' : None,
+    'track' : None,
+    'links' : None,
+    'attachments' : None,
     'matchby' : 'Keynote 1',
     'abstract' : 'Yet to be announced',
     'persons' : [],
+    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
     'language' : 'eng',
-    'type' : 'lecture',
+    'type' : 'talk',
+    'id' : eventid,
 })
+eventid += 1
 
 events.append({
     'title' : 'Keynote 2',
+    'subtitle' : None,
+    'logo' : None,
+    'track' : None,
+    'links' : None,
+    'attachments' : None,
     'matchby' : 'Keynote 2',
     'abstract' : 'Yet to be announced',
     'persons' : [],
+    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
     'language' : 'eng',
-    'type' : 'lecture',
+    'type' : 'talk',
+    'id' : eventid,
 })
+eventid += 1
+
+events.append({
+    'title' : 'Opening',
+    'subtitle' : None,
+    'logo' : None,
+    'track' : None,
+    'links' : None,
+    'attachments' : None,
+    'matchby' : 'opening',
+    'abstract' : '',
+    'persons' : [],
+    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
+    'language' : 'eng',
+    'type' : 'talk',
+    'id' : eventid,
+})
+eventid += 1
+
+
+events.append({
+    'title' : 'Closing',
+    'subtitle' : None,
+    'logo' : None,
+    'track' : None,
+    'links' : None,
+    'attachments' : None,
+    'matchby' : 'closing',
+    'abstract' : '',
+    'persons' : [],
+    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
+    'language' : 'eng',
+    'type' : 'talk',
+    'id' : eventid,
+})
+eventid += 1
+
+
+
+
+# All events in room "Elsewhere" are auto generated
+eventid = 200
+
 
 ######################################
 
@@ -225,7 +381,25 @@ for l in lines:
         if not event:
             continue
 
-        event = find_event(event)
+        if rooms[i].lower() != elsewhere_room.lower():
+            event = find_event(event)
+        else:
+            event = {
+                'title' : event,
+                'subtitle' : None,
+                'logo' : None,
+                'track' : None,
+                'links' : None,
+                'attachments' : None,
+                'abstract' : None,
+                'persons' : [],
+                'recording': { 'license' : 'no-video', 'optout' : 'true' },
+                'language' : 'eng',
+                'type' : elsewhere_type,
+                'id' : eventid,
+            }
+            eventid += 1
+            events.append(event)
 
         event['start'] = slot_start
         event['end'] = slot_end
@@ -245,12 +419,13 @@ for l in lines:
 schedule = ET.Element('schedule')
 ET.SubElement(schedule, 'version').text = version
 
-event_ignored_tags = {'id', 'matchby', 'end'}
+event_ignored_tags = {'id', 'matchby', 'end', 'day', 'placed' }
+event_ensure_tags = { 'logo', 'description', 'recording', 'track', 'links', 'attachments' }
 
 conference = {
   'days' : 4,
   'title' : 'GUADEC 2016',
-  'start' : '2016-07-12',
+  'start' : '2016-07-11',
   'end' : '2016-08-14',
   'acronym' : 'GUADEC2016',
   'timeslot_duration' : '00:15', # What does this mean?
@@ -277,7 +452,7 @@ def add_elements(et, elements, ignore=set()):
 
 add_elements(ET.SubElement(schedule, 'conference'), conference)
 
-for dayid in range(1, conference['days']):
+for dayid in range(1, conference['days'] + 1):
     day = ET.SubElement(schedule, 'day')
     day.attrib['index'] = str(dayid)
     date = datetime.datetime.strptime(conference['start'], '%Y-%m-%d')
@@ -294,6 +469,15 @@ for dayid in range(1, conference['days']):
         for event in events:
             if not 'room' in event or event['room'] != roomname or event['day'] != dayid:
                 continue
+
+            event['placed'] = True
+
+            if not 'slug' in event or event['slug'] is None:
+                title = event['title']
+                # Try to keep the slug the same even if title changes (for unconference mostly)
+                if 'matchby' in event:
+                    title = event['matchby']
+                event['slug'] = "%i-%s" % (event['id'], re.subn(r'[^a-zA-Z_ 0-9]', '', event['title'].lower())[0].strip().replace(' ', '_'))
 
             start = event['start']
             end = event['end']
@@ -315,15 +499,27 @@ for dayid in range(1, conference['days']):
             duration = end - start
             dseconds = duration.total_seconds()
 
-            event['date'] = start.strftime(datetimeformat)
+            event['date'] = start.isoformat()
             event['duration'] = "%02i:%02i" % (dseconds // (60 * 60), dseconds // (60) % 60)
 
             ev = ET.SubElement(room, 'event')
+            ev.attrib['id'] = str(event['id'])
             add_elements(ev, event, event_ignored_tags)
 
     if day_start:
-        day.attrib['start'] = day_start.strftime(datetimeformat)
-        day.attrib['end'] = day_end.strftime(datetimeformat)
+        day.attrib['start'] = day_start.isoformat()
+        day.attrib['end'] = day_end.isoformat()
 
 open('schedule.xml', 'bw').write(ET.tostring(schedule, encoding='UTF-8'))
+
+unplaced = set()
+for event in events:
+    if 'placed' in event and event['placed']:
+        continue
+    unplaced.add(event['title'])
+
+if unplaced:
+    print('Not all events were placed in the schedule!')
+    for title in unplaced:
+        print(' * %s' % title)
 
