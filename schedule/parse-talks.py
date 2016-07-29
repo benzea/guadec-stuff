@@ -241,15 +241,19 @@ events.append({
 eventid += 1
 
 events.append({
-    'title' : 'Keynote 1',
+    'title' : "Confessions of a command line geek: Why I don't use GNOME but everyone else should",
     'subtitle' : None,
     'logo' : None,
     'track' : None,
     'links' : None,
     'attachments' : None,
     'matchby' : 'Keynote 1',
-    'abstract' : 'Yet to be announced',
-    'persons' : [],
+    'abstract' : '''Despite what tablet- and phone-loving pundits say, the laptop is here to stay. When a user wants to watch a movie on a train, they reach for the tablet first. But if they want to do actual, real work, they still prefer the laptop.
+
+Meanwhile, software freedom should always be for everyone, not just technical users and software developers. The GNOME project was one of the first in this history of Free Software to realize this, and seek to create a free software desktop that truly allowed everyone to enjoy the software freedom that those of us had already happily found with Bash and Emacs (or vi :) years before.
+
+This keynote will discuss why GNOME remains best poised to deliver software freedom to everyone, how GNOME continues to be the best welcome-mat for those who want software freedom, and why GNOME remains absolutely essential to the advancement of software freedom for decades to come.''',
+    'persons' : ['Bradley Kuhn'],
     'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
     'language' : 'eng',
     'type' : 'talk',
@@ -258,15 +262,20 @@ events.append({
 eventid += 1
 
 events.append({
-    'title' : 'Keynote 2',
+    'title' : 'We want more centralization, do we?',
     'subtitle' : None,
     'logo' : None,
     'track' : None,
     'links' : None,
     'attachments' : None,
     'matchby' : 'Keynote 2',
-    'abstract' : 'Yet to be announced',
-    'persons' : [],
+    'abstract' : '''The roots of the Internet can be found in the move from large mainframes to smaller and locally connected machines (Unices or VAXen) Unix. Obviously there was a need to connect to remote machines in a convenient way and not only with manually managed uucp networks.
+
+Eventually in the mid 90ies decentralization was achieved and directly visible due to Gopher and the Web. With the move of the big search engines to a general service providers, things started to revert to the former centralization.
+
+The Internet still looks like a collection of many computers but in reality most system do not anymore work without access to, say, apis.google.com. Unfortunately desktops environments moved in the same direction.
+Do we really want to rely on other peoples machines?''',
+    'persons' : ['Werner Koch'],
     'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
     'language' : 'eng',
     'type' : 'talk',
