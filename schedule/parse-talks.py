@@ -434,7 +434,7 @@ event_ensure_tags = { 'logo', 'description', 'recording', 'track', 'links', 'att
 conference = {
   'days' : 4,
   'title' : 'GUADEC 2016',
-  'start' : '2016-07-11',
+  'start' : '2016-08-11',
   'end' : '2016-08-14',
   'acronym' : 'GUADEC2016',
   'timeslot_duration' : '00:15', # What does this mean?
