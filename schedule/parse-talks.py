@@ -363,27 +363,40 @@ slot_day = 0
 slot_events = []
 slot_start = None
 
+slots = []
+
 for l in lines:
     if not l.strip():
         continue
-    try:
-        l = l.split('\t')
-        if l[0]:
-            day = int(l[0])
+    l = l.split('\t')
+    if l[0]:
+        day_new = int(l[0])
+        if slot_day != day_new:
+            slot_start = None
 
-        if not l[1]:
-             continue
+            for e in slot_events:
+                assert(not e)
 
-        start_time = l[1].strip()
-        new_slot_events = [ i.strip() for i in l[2:] ]
-    except:
-        pass
+            slot_day = day_new
+
+    if not l[1]:
+         continue
+
+    start_time = l[1].strip()
+    new_slot_events = [ i.strip() for i in l[2:] ]
 
     for event in new_slot_events:
         if event.lower() in ignore_events:
             new_slot_events = []
 
     slot_end = start_time
+
+    slot_filled = False
+    for ev in slot_events:
+        if ev:
+            slot_filled = True
+    if slot_filled:
+        slots.append([slot_day, slot_start, slot_end])
 
     # Do the closing of the previous events
     for i, event in enumerate(slot_events):
@@ -412,7 +425,7 @@ for l in lines:
 
         event['start'] = slot_start
         event['end'] = slot_end
-        event['day'] = day
+        event['day'] = slot_day
         event['room'] = rooms[i]
 
 
@@ -520,6 +533,114 @@ for dayid in range(1, conference['days'] + 1):
         day.attrib['end'] = day_end.isoformat()
 
 open('schedule.xml', 'bw').write(ET.tostring(schedule, encoding='UTF-8'))
+
+
+###
+
+html = ET.Element('div')
+html.attrib['class'] = "schedule"
+
+
+abstracts = {}
+
+for dayid in range(1, conference['days'] + 1):
+    tmp = ET.SubElement(html, 'h3')
+
+    date = datetime.datetime.strptime(conference['start'], '%Y-%m-%d')
+    date = date.date() + datetime.timedelta(days=dayid - 1)
+
+    tmp.text = date.strftime('%A %d. %B %Y')
+
+    table = ET.SubElement(html, 'table')
+    tbody = ET.SubElement(table, 'tbody')
+
+
+    for slot_day, slot_start, slot_end in slots:
+        if slot_day != dayid:
+            continue
+
+        tr = ET.SubElement(tbody, 'tr')
+        td = ET.SubElement(tr, 'td')
+        td.text = slot_start
+
+        td = ET.SubElement(tr, 'td')
+        ul = ET.SubElement(tr, 'ul')
+
+        for event in sorted(events, key=lambda x:x['room']):
+            if event['day'] != dayid or event['start'] != slot_start:
+                continue
+
+            if 'abstract' in event and event['abstract']:
+                div = ET.Element('div')
+                div.attrib['class'] = 'abstract'
+                div.attrib['id'] = 'abstract-' + event['slug']
+
+                header = ET.SubElement(div, 'h4')
+                a = ET.SubElement(header, 'a')
+                a.text = event['title']
+                a.attrib['href'] = '#' + event['slug']
+
+                details = ET.SubElement(div, 'span')
+                details.attrib['class'] = 'details'
+                details.text = 'On ' + date.strftime('%A') + ' at ' + event['start'] + ' (' + event['room'] + ')'
+                if event['persons']:
+                    details.text += ' by ' + ', '.join(event['persons'])
+
+                abstract = event['abstract'].split('\n\n')
+                for paragraph in abstract:
+                    p = ET.SubElement(div, 'p')
+                    first = True
+                    for line in paragraph.split('\n'):
+                        if not first:
+                            br = ET.SubElement(p, 'br')
+                            br.tail = line
+                        else:
+                            first = False
+                            p.text = line
+
+                #div.text = event['abstract']
+                abstracts[event['title']] = div
+
+
+            li = ET.SubElement(ul, 'li')
+            li.attrib['class'] = 'talk'
+            li.attrib['id'] = event['slug']
+
+            header = ET.SubElement(li, 'span')
+            header.attrib['style'] = 'font-weight: bold'
+
+            if 'abstract' in event and event['abstract']:
+                hdrtext = ET.SubElement(header, 'a')
+                hdrtext.attrib['href'] = '#abstract-' + event['slug']
+            else:
+                hdrtext = header
+
+            hdrtext.text = event['title']
+
+            if event['persons']:
+                br = ET.SubElement(li, 'br')
+                br.tail = ', '.join(event['persons'])
+
+
+tmp = ET.SubElement(html, 'h3')
+tmp.text = 'Abstracts'
+
+for title in sorted(abstracts):
+    html.append(abstracts[title])
+
+
+
+
+
+tree = ET.ElementTree(html)
+tree.write('schedule.html', encoding='UTF-8', xml_declaration=False)
+
+
+#####
+
+
+
+
 
 unplaced = set()
 for event in events:
