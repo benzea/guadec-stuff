@@ -25,6 +25,10 @@ talk_re = re.compile(r'''
 <td>(?P<author>.*?)</td>.*?
 <th>Co-presenters:</th>[\r\n\s]*
 <td>(?P<coauthors>.*?)</td>.*?
+<th>Talk\ length:</th>[\r\n\s]*
+<td>(?P<length>.*?)</td>.*?
+<th>Status:</th>[\r\n\s]*
+<td>(?P<status>.*?)</td>.*?
 </div>
 ''', re.VERBOSE|re.MULTILINE|re.DOTALL|re.IGNORECASE)
 
@@ -42,6 +46,9 @@ for talk in talk_re.finditer(infile):
 
     author = html.unescape(talk.group('author').strip())
     coauthors = html.unescape(talk.group('coauthors').strip())
+
+    status = html.unescape(talk.group('status').strip())
+    length = html.unescape(talk.group('length').strip())
 
     authors = [author, ]
 
@@ -74,6 +81,9 @@ for talk in talk_re.finditer(infile):
     event['slug'] = None # Unique identifier for URL?
     event['id'] = eventid
     event['recording'] = { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' }
+
+    event['_status'] = status
+    event['_length'] = length
 
     eventid += 1
 
@@ -318,7 +328,70 @@ events.append({
 })
 eventid += 1
 
+events.append({
+    'title' : 'BBQ at AKK',
+    'subtitle' : None,
+    'logo' : None,
+    'track' : None,
+    'links' : None,
+    'attachments' : None,
+    'abstract' : 'Pre-registration meeting in the AKK beer garden (on campus) and BBQ there. We will provide food, drinks are inexpensive but not free. Bring cash for payment.',
+    'persons' : ['AKK and GUADEC Teams'],
+    'recording': { 'license' : 'no-video', 'optout' : 'true' },
+    'language' : 'eng',
+    'type' : '',
+    'id' : eventid,
+})
+eventid += 1
 
+events.append({
+    'title' : 'Picnic',
+    'subtitle' : None,
+    'logo' : None,
+    'track' : None,
+    'links' : None,
+    'attachments' : None,
+    'abstract' : 'We are going to go to a park and picnic there. Some games, light food, and drinks will be provided.',
+    'persons' : ['GUADEC Team'],
+    'recording': { 'license' : 'no-video', 'optout' : 'true' },
+    'language' : 'eng',
+    'type' : '',
+    'id' : eventid,
+})
+eventid += 1
+
+events.append({
+    'title' : 'Z10',
+    'subtitle' : None,
+    'logo' : None,
+    'track' : None,
+    'links' : None,
+    'attachments' : None,
+    'abstract' : 'Bar evening at Z10. There will be no food available.',
+    'persons' : ['Z10 and GUADEC Teams'],
+    'recording': { 'license' : 'no-video', 'optout' : 'true' },
+    'language' : 'eng',
+    'type' : '',
+    'id' : eventid,
+})
+eventid += 1
+
+events.append({
+    'title' : 'Centricular Dinner at Hoepfener Burg',
+    'matchby' : 'Hoepfener Burg',
+    'subtitle' : None,
+    'logo' : None,
+    'track' : None,
+    'links' : None,
+    'attachments' : None,
+    'abstract' : 'We are going to visit the beer garden at the Hoepfener Burg (local brewery) and have a sponsored dinner there.',
+    'persons' : [],
+    'recording': { 'license' : 'no-video', 'optout' : 'true' },
+    'language' : 'eng',
+    'type' : '',
+    'id' : eventid,
+})
+eventid += 1
 
 
 # All events in room "Elsewhere" are auto generated
@@ -342,6 +415,8 @@ f.close()
 
 def find_event(title):
     for event in events:
+        if '_auto' in event:
+            continue
         if ('matchby' in event and event['matchby'].lower() == title.lower()) or  event['title'].lower() == title.lower():
             # Assume it is the same
             return event
@@ -403,11 +478,12 @@ for l in lines:
         if not event:
             continue
 
-        if rooms[i].lower() != elsewhere_room.lower():
+        try:
             event = find_event(event)
-        else:
+        except:
             event = {
                 'title' : event,
+                'room' : rooms[i],
                 'subtitle' : None,
                 'logo' : None,
                 'track' : None,
@@ -419,6 +495,7 @@ for l in lines:
                 'language' : 'eng',
                 'type' : elsewhere_type,
                 'id' : eventid,
+                '_auto' : True,
             }
             eventid += 1
             events.append(event)
@@ -456,6 +533,9 @@ conference = {
 def add_elements(et, elements, ignore=set()):
     for key, val in elements.items():
         if key in event_ignored_tags:
+            continue
+
+        if key.startswith('_'):
             continue
 
         if isinstance(val, dict):
@@ -521,6 +601,13 @@ for dayid in range(1, conference['days'] + 1):
             duration = end - start
             dseconds = duration.total_seconds()
 
+            if '_length' in event:
+                if 'Short' in event['_length']:
+                    assert(dseconds == 30*60)
+                if 'Long' in event['_length']:
+                    assert(dseconds == 45*60)
+
+
             event['date'] = start.isoformat()
             event['duration'] = "%02i:%02i" % (dseconds // (60 * 60), dseconds // (60) % 60)
 
@@ -552,10 +639,21 @@ for dayid in range(1, conference['days'] + 1):
     tmp.text = date.strftime('%A %d. %B %Y')
 
     table = ET.SubElement(html, 'table')
+    thead = ET.SubElement(table, 'thead')
+
+    # Header
+    tr = ET.SubElement(thead, 'tr')
+    td = ET.SubElement(tr, 'td')
+    td.text = ""
+
+    for room in rooms[:2]:
+        td = ET.SubElement(tr, 'td')
+        td.text = room
+
     tbody = ET.SubElement(table, 'tbody')
 
-
-    for slot_day, slot_start, slot_end in slots:
+    for slot in slots:
+        slot_day, slot_start, slot_end = slot
         if slot_day != dayid:
             continue
 
@@ -563,12 +661,36 @@ for dayid in range(1, conference['days'] + 1):
         td = ET.SubElement(tr, 'td')
         td.text = slot_start
 
-        td = ET.SubElement(tr, 'td')
-        ul = ET.SubElement(tr, 'ul')
+        td_rooms = []
+        td_rooms.append(ET.SubElement(tr, 'td'))
+        td_rooms.append(ET.SubElement(tr, 'td'))
 
-        for event in sorted(events, key=lambda x:x['room']):
-            if event['day'] != dayid or event['start'] != slot_start:
+        # Insert a row underneath if the next slot is not adjacent to this one.
+        try:
+            next_slot = slots[slots.index(slot)+1]
+            if next_slot[0] == slot_day and next_slot[1] != slot_end:
+                tr_extra = ET.SubElement(tbody, 'tr')
+                td = ET.SubElement(tr_extra, 'td')
+                td.text = slot_end
+                ET.SubElement(tr_extra, 'td')
+                ET.SubElement(tr_extra, 'td')
+        except IndexError:
+            pass
+
+        for event in sorted(events, key=lambda x: x['room'] if 'room' in x and x['room'] else ''):
+            if 'room' not in event or 'day' not in event or event['day'] != dayid or event['start'] != slot_start:
                 continue
+
+            try:
+                td = td_rooms[rooms.index(event['room'])]
+            except IndexError:
+                # Replace with a colspan
+                colspan = len(td_rooms)
+                for td in td_rooms[1:]:
+                    tr.remove(td)
+                td = td_rooms[0]
+                td.attrib['colspan'] = str(colspan)
+
 
             if 'abstract' in event and event['abstract']:
                 div = ET.Element('div')
@@ -602,11 +724,10 @@ for dayid in range(1, conference['days'] + 1):
                 abstracts[event['title']] = div
 
 
-            li = ET.SubElement(ul, 'li')
-            li.attrib['class'] = 'talk'
-            li.attrib['id'] = event['slug']
+            td.attrib['class'] = 'talk'
+            td.attrib['id'] = event['slug']
 
-            header = ET.SubElement(li, 'span')
+            header = ET.SubElement(td, 'span')
             header.attrib['style'] = 'font-weight: bold'
 
             if 'abstract' in event and event['abstract']:
@@ -618,7 +739,7 @@ for dayid in range(1, conference['days'] + 1):
             hdrtext.text = event['title']
 
             if event['persons']:
-                br = ET.SubElement(li, 'br')
+                br = ET.SubElement(td, 'br')
                 br.tail = ', '.join(event['persons'])
 
 
@@ -646,10 +767,12 @@ unplaced = set()
 for event in events:
     if 'placed' in event and event['placed']:
         continue
+    if '_status' in event and 'confirmed' not in event['_status']:
+        continue
     unplaced.add(event['title'])
 
 if unplaced:
     print('Not all events were placed in the schedule!')
-    for title in unplaced:
+    for title in sorted(unplaced):
         print(' * %s' % title)
 
