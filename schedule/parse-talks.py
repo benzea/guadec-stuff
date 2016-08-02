@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import uuid
 import copy
 import sys
 import re
@@ -9,6 +10,8 @@ import html
 
 elsewhere_room = "Elsewhere"
 elsewhere_type = ""
+
+namespace_uuid = uuid.UUID(hex="d43154ca7d274456a566d48f0aeea991")
 
 version = "1.0"
 # set/list of events to ignore (only used for calculating end times)
@@ -518,7 +521,7 @@ for l in lines:
 schedule = ET.Element('schedule')
 ET.SubElement(schedule, 'version').text = version
 
-event_ignored_tags = {'id', 'matchby', 'end', 'day', 'placed' }
+event_ignored_tags = {'id', 'guid', 'matchby', 'end', 'day', 'placed' }
 event_ensure_tags = { 'logo', 'description', 'recording', 'track', 'links', 'attachments' }
 
 conference = {
@@ -607,12 +610,16 @@ for dayid in range(1, conference['days'] + 1):
                 if 'Long' in event['_length']:
                     assert(dseconds == 45*60)
 
+            if 'guid' not in event:
+                event['guid'] = uuid.uuid5(namespace_uuid, str(event['id']))
+
 
             event['date'] = start.isoformat()
             event['duration'] = "%02i:%02i" % (dseconds // (60 * 60), dseconds // (60) % 60)
 
             ev = ET.SubElement(room, 'event')
             ev.attrib['id'] = str(event['id'])
+            ev.attrib['guid'] = str(event['guid'])
             add_elements(ev, event, event_ignored_tags)
 
     if day_start:
