@@ -24,7 +24,7 @@ talk_re = re.compile(r'''
 <th>Author:</th>[\r\n\s]*
 <td>(?P<author>.*?)</td>.*?
 <th>Co-presenters:</th>[\r\n\s]*
-<td>(?P<coauthors>.*?)</td>.*?
+<td>(?P<coauthors>.*?)[\r\n\s]*(<form.*?form>)?[\r\n\s]*</td>.*?
 <th>Talk\ length:</th>[\r\n\s]*
 <td>(?P<length>.*?)</td>.*?
 <th>Status:</th>[\r\n\s]*
