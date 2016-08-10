@@ -97,14 +97,14 @@ for talk in talk_re.finditer(infile):
 eventid = 100
 
 events.append({
-    'title' : 'GNOME Foundation Annual General Meeting',
+    'title' : 'GNOME Foundation annual general meeting',
     'matchby' : 'agm',
     'subtitle' : None,
     'logo' : None,
     'track' : None,
     'links' : None,
     'attachments' : None,
-    'abstract' : 'The Annual General Meeting of the GNOME Foundation and team reports.',
+    'abstract' : 'The annual general meeting of the GNOME Foundation: team reports and Q&A with the board.',
     'persons' : ['GNOME Board',],
     'language' : 'eng',
     'type' : 'meeting',
@@ -136,7 +136,7 @@ events.append({
     'track' : None,
     'links' : None,
     'attachments' : None,
-    'abstract' : 'Lightning talks',
+    'abstract' : 'Fast-paced and focused talks on any and all subjects. You will be able to sign up for these on the day! Talks will be accepted on a first come, first serve basis so turn up early if you want to make it on to the schedule. All talks will be subject to a strict time limit of 5 minutes on stage (including setup). Slides are welcome, but not compulsory.',
     'persons' : [],
     'language' : 'eng',
     'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
@@ -153,7 +153,13 @@ events.append({
     'links' : None,
     'attachments' : None,
     'matchby' : 'Unconference #1',
-    'abstract' : 'Yet to be announced',
+    # WARNING, delete the below when changing the abstract!
+    'abstract_title' : 'Unconference',
+    'abstract' : '''25 minute slots for talks and discussion panels to be submitted and selected by attendees on-site. This is your chance to present cutting edge developments or anything that did not make it into the normal schedule.
+ 
+Talks will be selected and posted on the board at 16:00 on Friday, 13:30 on Saturday and 16:00 on Sunday.
+ 
+You can propose talks throughout the day and other attendees will add a vote to the ones that they would like to see. At the last break before the talk slot, the talks with the most votes will be selected and scheduled, so check the schedule board!''',
     'persons' : ['to be announced'],
     'language' : 'eng',
     'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
@@ -171,7 +177,13 @@ events.append({
     'links' : None,
     'attachments' : None,
     'matchby' : 'Unconference #2',
-    'abstract' : 'Yet to be announced',
+    # WARNING, delete the below when changing the abstract!
+    'abstract_title' : 'Unconference',
+    'abstract' : '''25 minute slots for talks and discussion panels to be submitted and selected by attendees on-site. This is your chance to present cutting edge developments or anything that did not make it into the normal schedule.
+ 
+Talks will be selected and posted on the board at 16:00 on Friday, 13:30 on Saturday and 16:00 on Sunday.
+ 
+You can propose talks throughout the day and other attendees will add a vote to the ones that they would like to see. At the last break before the talk slot, the talks with the most votes will be selected and scheduled, so check the schedule board!''',
     'persons' : ['to be announced'],
     'language' : 'eng',
     'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
@@ -189,7 +201,13 @@ events.append({
     'links' : None,
     'attachments' : None,
     'matchby' : 'Unconference #3',
-    'abstract' : 'Yet to be announced',
+    # WARNING, delete the below when changing the abstract!
+    'abstract_title' : 'Unconference',
+    'abstract' : '''25 minute slots for talks and discussion panels to be submitted and selected by attendees on-site. This is your chance to present cutting edge developments or anything that did not make it into the normal schedule.
+ 
+Talks will be selected and posted on the board at 16:00 on Friday, 13:30 on Saturday and 16:00 on Sunday.
+ 
+You can propose talks throughout the day and other attendees will add a vote to the ones that they would like to see. At the last break before the talk slot, the talks with the most votes will be selected and scheduled, so check the schedule board!''',
     'persons' : ['to be announced'],
     'language' : 'eng',
     'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
@@ -207,7 +225,13 @@ events.append({
     'links' : None,
     'attachments' : None,
     'matchby' : 'Unconference #4',
-    'abstract' : 'Yet to be announced',
+    # WARNING, delete the below when changing the abstract!
+    'abstract_title' : 'Unconference',
+    'abstract' : '''25 minute slots for talks and discussion panels to be submitted and selected by attendees on-site. This is your chance to present cutting edge developments or anything that did not make it into the normal schedule.
+ 
+Talks will be selected and posted on the board at 16:00 on Friday, 13:30 on Saturday and 16:00 on Sunday.
+ 
+You can propose talks throughout the day and other attendees will add a vote to the ones that they would like to see. At the last break before the talk slot, the talks with the most votes will be selected and scheduled, so check the schedule board!''',
     'persons' : ['to be announced'],
     'language' : 'eng',
     'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
@@ -225,7 +249,13 @@ events.append({
     'links' : None,
     'attachments' : None,
     'matchby' : 'Unconference #5',
-    'abstract' : 'Yet to be announced',
+    # WARNING, delete the below when changing the abstract!
+    'abstract_title' : 'Unconference',
+    'abstract' : '''25 minute slots for talks and discussion panels to be submitted and selected by attendees on-site. This is your chance to present cutting edge developments or anything that did not make it into the normal schedule.
+ 
+Talks will be selected and posted on the board at 16:00 on Friday, 13:30 on Saturday and 16:00 on Sunday.
+ 
+You can propose talks throughout the day and other attendees will add a vote to the ones that they would like to see. At the last break before the talk slot, the talks with the most votes will be selected and scheduled, so check the schedule board!''',
     'persons' : ['to be announced'],
     'language' : 'eng',
     'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
@@ -243,7 +273,13 @@ events.append({
     'links' : None,
     'attachments' : None,
     'matchby' : 'Unconference #6',
-    'abstract' : 'Yet to be announced',
+    # WARNING, delete the below when changing the abstract!
+    'abstract_title' : 'Unconference',
+    'abstract' : '''25 minute slots for talks and discussion panels to be submitted and selected by attendees on-site. This is your chance to present cutting edge developments or anything that did not make it into the normal schedule.
+ 
+Talks will be selected and posted on the board at 16:00 on Friday, 13:30 on Saturday and 16:00 on Sunday.
+ 
+You can propose talks throughout the day and other attendees will add a vote to the ones that they would like to see. At the last break before the talk slot, the talks with the most votes will be selected and scheduled, so check the schedule board!''',
     'persons' : ['to be announced'],
     'language' : 'eng',
     'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
@@ -254,7 +290,7 @@ events.append({
 eventid += 1
 
 events.append({
-    'title' : "Confessions of a command line geek: Why I don't use GNOME but everyone else should",
+    'title' : "Confessions of a command line geek: why I don't use GNOME but everyone else should",
     'subtitle' : None,
     'logo' : None,
     'track' : None,
@@ -380,14 +416,14 @@ events.append({
 eventid += 1
 
 events.append({
-    'title' : 'Centricular Dinner at Hoepfener Burg',
-    'matchby' : 'Hoepfener Burg',
+    'title' : 'Centricular Dinner at Hoepfner Burg',
+    'matchby' : 'Hoepfner Burg',
     'subtitle' : None,
     'logo' : None,
     'track' : None,
     'links' : None,
     'attachments' : None,
-    'abstract' : 'We are going to visit the beer garden at the Hoepfener Burg (local brewery) and have a sponsored dinner there.',
+    'abstract' : 'We are going to visit the beer garden at the Hoepfner Burg (local brewery) and have a sponsored dinner there.',
     'persons' : [],
     'recording': { 'license' : 'no-video', 'optout' : 'true' },
     'language' : 'eng',
@@ -521,7 +557,7 @@ for l in lines:
 schedule = ET.Element('schedule')
 ET.SubElement(schedule, 'version').text = version
 
-event_ignored_tags = {'id', 'guid', 'matchby', 'end', 'day', 'placed' }
+event_ignored_tags = {'id', 'guid', 'matchby', 'end', 'day', 'placed', 'abstract_title' }
 event_ensure_tags = { 'logo', 'description', 'recording', 'track', 'links', 'attachments' }
 
 conference = {
@@ -534,7 +570,7 @@ conference = {
 }
 
 def add_elements(et, elements, ignore=set()):
-    for key, val in elements.items():
+    for key, val in sorted(elements.items()):
         if key in event_ignored_tags:
             continue
 
@@ -698,20 +734,34 @@ for dayid in range(1, conference['days'] + 1):
                 td = td_rooms[0]
                 td.attrib['colspan'] = str(colspan)
 
+            cross_link = event['slug']
+            abstract_title = event['title']
+            unspecific_location = False
+            no_anchor = False
+            if 'abstract_title' in event:
+                unspecific_location = True
+                cross_link = event['abstract_title']
+                abstract_title = event['abstract_title']
+                # Let the link back go to the first instance that was found
+                if abstract_title in abstracts:
+                    no_anchor = True
 
             if 'abstract' in event and event['abstract']:
                 div = ET.Element('div')
                 div.attrib['class'] = 'abstract'
-                div.attrib['id'] = 'abstract-' + event['slug']
+                div.attrib['id'] = 'abstract-' + cross_link
 
                 header = ET.SubElement(div, 'h4')
                 a = ET.SubElement(header, 'a')
-                a.text = event['title']
-                a.attrib['href'] = '#' + event['slug']
+                a.text = abstract_title
+                a.attrib['href'] = '#' + cross_link
 
                 details = ET.SubElement(div, 'span')
                 details.attrib['class'] = 'details'
-                details.text = 'On ' + date.strftime('%A') + ' at ' + event['start'] + ' (' + event['room'] + ')'
+                if unspecific_location:
+                    details.text = 'At different times'
+                else:
+                    details.text = 'On ' + date.strftime('%A') + ' at ' + event['start'] + ' (' + event['room'] + ')'
                 if event['persons']:
                     details.text += ' by ' + ', '.join(event['persons'])
 
@@ -727,19 +777,20 @@ for dayid in range(1, conference['days'] + 1):
                             first = False
                             p.text = line
 
-                #div.text = event['abstract']
-                abstracts[event['title']] = div
+                if abstract_title not in abstracts:
+                    abstracts[abstract_title] = div
 
 
             td.attrib['class'] = 'talk'
-            td.attrib['id'] = event['slug']
+            if not no_anchor:
+                td.attrib['id'] = cross_link
 
             header = ET.SubElement(td, 'span')
             header.attrib['style'] = 'font-weight: bold'
 
             if 'abstract' in event and event['abstract']:
                 hdrtext = ET.SubElement(header, 'a')
-                hdrtext.attrib['href'] = '#abstract-' + event['slug']
+                hdrtext.attrib['href'] = '#abstract-' + cross_link
             else:
                 hdrtext = header
 
