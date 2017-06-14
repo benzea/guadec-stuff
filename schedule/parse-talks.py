@@ -38,6 +38,11 @@ talk_re = re.compile(r'''
 tzinfo = datetime.timezone(datetime.timedelta(hours=2))
 
 
+if len(sys.argv) != 3:
+    sys.stderr.write(
+        "Usage: %s guadec-talks.html schedule\n" % sys.argv[0])
+    sys.exit(1)
+
 infile = open(sys.argv[1]).read()
 
 events = []
@@ -97,8 +102,8 @@ for talk in talk_re.finditer(infile):
 eventid = 100
 
 events.append({
-    'title' : 'GNOME Foundation annual general meeting',
-    'matchby' : 'agm',
+    'title' : 'GNOME Foundation AGM (part 1)',
+    'matchby' : 'GNOME Foundation AGM 1',
     'subtitle' : None,
     'logo' : None,
     'track' : None,
@@ -114,7 +119,24 @@ events.append({
 eventid += 1
 
 events.append({
-    'title' : 'Intern lightning talks',
+    'title' : 'GNOME Foundation AGM (part 2)',
+    'matchby' : 'GNOME Foundation AGM 2',
+    'subtitle' : None,
+    'logo' : None,
+    'track' : None,
+    'links' : None,
+    'attachments' : None,
+    'abstract' : 'The annual general meeting of the GNOME Foundation: team reports and Q&A with the board.',
+    'persons' : ['GNOME Board',],
+    'language' : 'eng',
+    'type' : 'meeting',
+    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
+   'id' : eventid,
+})
+eventid += 1
+
+events.append({
+    'title' : 'Interns lightning talks',
     'subtitle' : None,
     'logo' : None,
     'track' : None,
@@ -146,18 +168,18 @@ events.append({
 eventid += 1
 
 events.append({
-    'title' : 'Unconference #1',
+    'title' : 'Open talk #1',
     'subtitle' : None,
     'logo' : None,
     'track' : None,
     'links' : None,
     'attachments' : None,
-    'matchby' : 'Unconference #1',
+    'matchby' : 'Open talk #1',
     # WARNING, delete the below when changing the abstract!
-    'abstract_title' : 'Unconference',
+    'abstract_title' : 'Open talk',
     'abstract' : '''25 minute slots for talks and discussion panels to be submitted and selected by attendees on-site. This is your chance to present cutting edge developments or anything that did not make it into the normal schedule.
  
-Talks will be selected and posted on the board at 16:00 on Friday, 13:30 on Saturday and 16:00 on Sunday.
+Talks will be selected and posted on the board at 15:30 on Friday and Sunday.
  
 You can propose talks throughout the day and other attendees will add a vote to the ones that they would like to see. At the last break before the talk slot, the talks with the most votes will be selected and scheduled, so check the schedule board!''',
     'persons' : ['to be announced'],
@@ -170,18 +192,18 @@ You can propose talks throughout the day and other attendees will add a vote to 
 eventid += 1
 
 events.append({
-    'title' : 'Unconference #2',
+    'title' : 'Open talk #2',
     'subtitle' : None,
     'logo' : None,
     'track' : None,
     'links' : None,
     'attachments' : None,
-    'matchby' : 'Unconference #2',
+    'matchby' : 'Open talk #2',
     # WARNING, delete the below when changing the abstract!
-    'abstract_title' : 'Unconference',
+    'abstract_title' : 'Open talk',
     'abstract' : '''25 minute slots for talks and discussion panels to be submitted and selected by attendees on-site. This is your chance to present cutting edge developments or anything that did not make it into the normal schedule.
  
-Talks will be selected and posted on the board at 16:00 on Friday, 13:30 on Saturday and 16:00 on Sunday.
+Talks will be selected and posted on the board at 16:00 on Friday and Sunday.
  
 You can propose talks throughout the day and other attendees will add a vote to the ones that they would like to see. At the last break before the talk slot, the talks with the most votes will be selected and scheduled, so check the schedule board!''',
     'persons' : ['to be announced'],
@@ -194,18 +216,18 @@ You can propose talks throughout the day and other attendees will add a vote to 
 eventid += 1
 
 events.append({
-    'title' : 'Unconference #3',
+    'title' : 'Open talk #3',
     'subtitle' : None,
     'logo' : None,
     'track' : None,
     'links' : None,
     'attachments' : None,
-    'matchby' : 'Unconference #3',
+    'matchby' : 'Open talk #3',
     # WARNING, delete the below when changing the abstract!
-    'abstract_title' : 'Unconference',
+    'abstract_title' : 'Open talk',
     'abstract' : '''25 minute slots for talks and discussion panels to be submitted and selected by attendees on-site. This is your chance to present cutting edge developments or anything that did not make it into the normal schedule.
  
-Talks will be selected and posted on the board at 16:00 on Friday, 13:30 on Saturday and 16:00 on Sunday.
+Talks will be selected and posted on the board at 16:00 on Friday and Sunday.
  
 You can propose talks throughout the day and other attendees will add a vote to the ones that they would like to see. At the last break before the talk slot, the talks with the most votes will be selected and scheduled, so check the schedule board!''',
     'persons' : ['to be announced'],
@@ -218,18 +240,18 @@ You can propose talks throughout the day and other attendees will add a vote to 
 eventid += 1
 
 events.append({
-    'title' : 'Unconference #4',
+    'title' : 'Open talk #4',
     'subtitle' : None,
     'logo' : None,
     'track' : None,
     'links' : None,
     'attachments' : None,
-    'matchby' : 'Unconference #4',
+    'matchby' : 'Open talk #4',
     # WARNING, delete the below when changing the abstract!
-    'abstract_title' : 'Unconference',
+    'abstract_title' : 'Open talk',
     'abstract' : '''25 minute slots for talks and discussion panels to be submitted and selected by attendees on-site. This is your chance to present cutting edge developments or anything that did not make it into the normal schedule.
  
-Talks will be selected and posted on the board at 16:00 on Friday, 13:30 on Saturday and 16:00 on Sunday.
+Talks will be selected and posted on the board at 16:00 on Friday and Sunday.
  
 You can propose talks throughout the day and other attendees will add a vote to the ones that they would like to see. At the last break before the talk slot, the talks with the most votes will be selected and scheduled, so check the schedule board!''',
     'persons' : ['to be announced'],
@@ -241,68 +263,17 @@ You can propose talks throughout the day and other attendees will add a vote to 
 })
 eventid += 1
 
-events.append({
-    'title' : 'Unconference #5',
-    'subtitle' : None,
-    'logo' : None,
-    'track' : None,
-    'links' : None,
-    'attachments' : None,
-    'matchby' : 'Unconference #5',
-    # WARNING, delete the below when changing the abstract!
-    'abstract_title' : 'Unconference',
-    'abstract' : '''25 minute slots for talks and discussion panels to be submitted and selected by attendees on-site. This is your chance to present cutting edge developments or anything that did not make it into the normal schedule.
- 
-Talks will be selected and posted on the board at 16:00 on Friday, 13:30 on Saturday and 16:00 on Sunday.
- 
-You can propose talks throughout the day and other attendees will add a vote to the ones that they would like to see. At the last break before the talk slot, the talks with the most votes will be selected and scheduled, so check the schedule board!''',
-    'persons' : ['to be announced'],
-    'language' : 'eng',
-    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
-    'type' : 'talk',
-    'id' : eventid,
-    'slug' : '%i-unconference-5' % eventid,
-})
-eventid += 1
 
 events.append({
-    'title' : 'Unconference #6',
-    'subtitle' : None,
-    'logo' : None,
-    'track' : None,
-    'links' : None,
-    'attachments' : None,
-    'matchby' : 'Unconference #6',
-    # WARNING, delete the below when changing the abstract!
-    'abstract_title' : 'Unconference',
-    'abstract' : '''25 minute slots for talks and discussion panels to be submitted and selected by attendees on-site. This is your chance to present cutting edge developments or anything that did not make it into the normal schedule.
- 
-Talks will be selected and posted on the board at 16:00 on Friday, 13:30 on Saturday and 16:00 on Sunday.
- 
-You can propose talks throughout the day and other attendees will add a vote to the ones that they would like to see. At the last break before the talk slot, the talks with the most votes will be selected and scheduled, so check the schedule board!''',
-    'persons' : ['to be announced'],
-    'language' : 'eng',
-    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
-    'type' : 'talk',
-    'id' : eventid,
-    'slug' : '%i-unconference-6' % eventid,
-})
-eventid += 1
-
-events.append({
-    'title' : "Confessions of a command line geek: why I don't use GNOME but everyone else should",
+    'title' : "Keynote 1",
     'subtitle' : None,
     'logo' : None,
     'track' : None,
     'links' : None,
     'attachments' : None,
     'matchby' : 'Keynote 1',
-    'abstract' : '''Despite what tablet- and phone-loving pundits say, the laptop is here to stay. When a user wants to watch a movie on a train, they reach for the tablet first. But if they want to do actual, real work, they still prefer the laptop.
-
-Meanwhile, software freedom should always be for everyone, not just technical users and software developers. The GNOME project was one of the first in this history of Free Software to realize this, and seek to create a free software desktop that truly allowed everyone to enjoy the software freedom that those of us had already happily found with Bash and Emacs (or vi :) years before.
-
-This keynote will discuss why GNOME remains best poised to deliver software freedom to everyone, how GNOME continues to be the best welcome-mat for those who want software freedom, and why GNOME remains absolutely essential to the advancement of software freedom for decades to come.''',
-    'persons' : ['Bradley Kuhn'],
+    'abstract' : '''Keynote 1: to be announced''',
+    'persons' : ['to be announced'],
     'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
     'language' : 'eng',
     'type' : 'talk',
@@ -311,29 +282,7 @@ This keynote will discuss why GNOME remains best poised to deliver software free
 eventid += 1
 
 events.append({
-    'title' : 'We want more centralization, do we?',
-    'subtitle' : None,
-    'logo' : None,
-    'track' : None,
-    'links' : None,
-    'attachments' : None,
-    'matchby' : 'Keynote 2',
-    'abstract' : '''The roots of the Internet can be found in the move from large mainframes to smaller and locally connected machines (Unices or VAXen) Unix. Obviously there was a need to connect to remote machines in a convenient way and not only with manually managed uucp networks.
-
-Eventually in the mid 90ies decentralization was achieved and directly visible due to Gopher and the Web. With the move of the big search engines to a general service providers, things started to revert to the former centralization.
-
-The Internet still looks like a collection of many computers but in reality most system do not anymore work without access to, say, apis.google.com. Unfortunately desktops environments moved in the same direction.
-Do we really want to rely on other peoples machines?''',
-    'persons' : ['Werner Koch'],
-    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
-    'language' : 'eng',
-    'type' : 'talk',
-    'id' : eventid,
-})
-eventid += 1
-
-events.append({
-    'title' : 'Opening',
+    'title' : 'Conference opening',
     'subtitle' : None,
     'logo' : None,
     'track' : None,
@@ -351,7 +300,7 @@ eventid += 1
 
 
 events.append({
-    'title' : 'Closing',
+    'title' : 'Conference closing',
     'subtitle' : None,
     'logo' : None,
     'track' : None,
@@ -368,29 +317,14 @@ events.append({
 eventid += 1
 
 events.append({
-    'title' : 'BBQ at AKK',
+    'title' : 'Pre-registration at Kro Bar',
     'subtitle' : None,
     'logo' : None,
     'track' : None,
     'links' : None,
     'attachments' : None,
-    'abstract' : 'Pre-registration meeting in the AKK beer garden (on campus) and BBQ there. We will provide food, drinks are inexpensive but not free. Bring cash for payment.',
-    'persons' : ['AKK and GUADEC Teams'],
-    'recording': { 'license' : 'no-video', 'optout' : 'true' },
-    'language' : 'eng',
-    'type' : '',
-    'id' : eventid,
-})
-eventid += 1
-
-events.append({
-    'title' : 'Picnic',
-    'subtitle' : None,
-    'logo' : None,
-    'track' : None,
-    'links' : None,
-    'attachments' : None,
-    'abstract' : 'We are going to go to a park and picnic there. Some games, light food, and drinks will be provided.',
+    'abstract' : 'Pre-registration and welcome event in Kro Bar on Oxford '
+                 'Road. Food and drinks available for purchase.',
     'persons' : ['GUADEC Team'],
     'recording': { 'license' : 'no-video', 'optout' : 'true' },
     'language' : 'eng',
@@ -400,31 +334,16 @@ events.append({
 eventid += 1
 
 events.append({
-    'title' : 'Z10',
+    'title' : 'GNOME 20th Birthday Party @ MOSI',
     'subtitle' : None,
     'logo' : None,
     'track' : None,
     'links' : None,
     'attachments' : None,
-    'abstract' : 'Bar evening at Z10. There will be no food available.',
-    'persons' : ['Z10 and GUADEC Teams'],
-    'recording': { 'license' : 'no-video', 'optout' : 'true' },
-    'language' : 'eng',
-    'type' : '',
-    'id' : eventid,
-})
-eventid += 1
-
-events.append({
-    'title' : 'Centricular Dinner at Hoepfner Burg',
-    'matchby' : 'Hoepfner Burg',
-    'subtitle' : None,
-    'logo' : None,
-    'track' : None,
-    'links' : None,
-    'attachments' : None,
-    'abstract' : 'We are going to visit the beer garden at the Hoepfner Burg (local brewery) and have a sponsored dinner there.',
-    'persons' : [],
+    'abstract' : 'Celeberate the 20th anniversary of the GNOME project in style at the '
+                 'Museum of Science and Industry. Buffet food is provided and drinks '
+                 'will be available for purchase.',
+    'persons' : ['GUADEC Team'],
     'recording': { 'license' : 'no-video', 'optout' : 'true' },
     'language' : 'eng',
     'type' : '',
@@ -562,10 +481,10 @@ event_ensure_tags = { 'logo', 'description', 'recording', 'track', 'links', 'att
 
 conference = {
   'days' : 4,
-  'title' : 'GUADEC 2016',
-  'start' : '2016-08-11',
-  'end' : '2016-08-14',
-  'acronym' : 'GUADEC2016',
+  'title' : 'GUADEC 2017',
+  'start' : '2017-07-27',
+  'end' : '2017-07-30',
+  'acronym' : 'GUADEC2017',
   'timeslot_duration' : '00:15', # What does this mean?
 }
 
@@ -724,10 +643,12 @@ for dayid in range(1, conference['days'] + 1):
             if 'room' not in event or 'day' not in event or event['day'] != dayid or event['start'] != slot_start:
                 continue
 
-            try:
-                td = td_rooms[rooms.index(event['room'])]
-            except IndexError:
-                # Replace with a colspan
+            room_index = rooms.index(event['room'])
+            if room_index < len(td_rooms):
+                # This is a normal conference room
+                td = td_rooms[room_index]
+            else:
+                # This is "elsewhere": replace will a cell that fills the whole row
                 colspan = len(td_rooms)
                 for td in td_rooms[1:]:
                     tr.remove(td)
