@@ -686,11 +686,11 @@ for dayid in range(1, conference['days'] + 1):
                 if event['persons']:
                     details.text += ' by ' + ', '.join(event['persons'])
 
-                abstract = event['abstract'].split('\n\n')
+                abstract = event['abstract'].split('<br><br>')
                 for paragraph in abstract:
                     p = ET.SubElement(div, 'p')
                     first = True
-                    for line in paragraph.split('\n'):
+                    for line in paragraph.split('<br>'):
                         if not first:
                             br = ET.SubElement(p, 'br')
                             br.tail = line
