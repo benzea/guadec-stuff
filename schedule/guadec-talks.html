@@ -1,19 +1,18 @@
 <!doctype HTML>
 <html>
-    <head >
-        <title>GUADEC 2016 Registration</title>
-        <link rel='stylesheet' type='text/css' href='https://static.gnome.org/css/grass-theme-style.css'/>
+    <head>
+        <title>GUADEC 2017 registration</title>
         <link rel='shortcut icon' href='https://static.gnome.org/img/logo/foot-16.png'/>
 
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.min.css" rel="stylesheet">
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-        <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-            <script type="text/javascript" src="https://login.persona.org/include.js"></script>
+        <script type="text/javascript" src="/javascripts/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="/javascripts/jquery-ui.min.js"></script>
 
         <script type="text/javascript">
             // Inserted variables
-                var currentUser = 'bberg@gnome.org';
+                var currentUser = 'ssssam@gmail.com';
 
             // Login arguments
             var login_args = {
@@ -21,66 +20,49 @@
               siteLogo: ""
             };
         </script>
-        <script type="text/javascript" src="/javascripts/login.js"></script>
-        <script type="text/javascript" src="/javascripts/gnome-reg.js"></script>
-        <link rel="stylesheet" href="/css/style.css" type="text/css" media="all">
-        <link rel="stylesheet" href="/css/style-gnome.css" type="text/css" media="all">
+        <script type="text/javascript" src="/javascripts/reg-fee-slider.js"></script>
+        <script type="text/javascript" src="/javascripts/reg-total.js"></script>
+        <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="/css/style-gnome.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="/css/960.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="/css/960-responsive.css" type="text/css" media="all" />
     </head>
 
-
 <body>
-<div id="global_domain_bar">
-<div class="maxwidth">
-	<div class="tab">
-	<a class="root" href="https://gnome.org/">GNOME.org</a>
-	</div>
-</div>
-</div>
-
-
-<!-- header -->
-    <div id="header" class="container_12">
-      <div id="logo" class="grid_3">
-        <a title="Go to home page" href="https://guadec.org/"><img style="width: 176px; height: 53px;" src="https://2016.guadec.org/wp-content/uploads/2016/03/guadec-logo-black-1.png" alt="GUADEC: The GNOME Conference" /></a>
+  <header id="masthead" class="site-header" role="banner">
+    <div class="container_12 grid grid-pad head-overflow">
+      <div class="navigation-container">
+            <form>
+              <button class="button-big logout" type="submit" formmethod="post" formaction="/auth/logout">Log out</button>
+            </form>
+            <div class="currentuser">Logged in as ssssam@gmail.com</div>
       </div>
-
-      <div id="top_bar" class="grid_9">
-        <div class="left">
-          <div class="menu-globalnav-container">
-            <ul id="menu-globalnav" class="menu">
-              <li id="menu-item-1039" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1039">
-              <a href="/">Registration Home</a></li>
-
-              <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                    <a href="/#logout" onclick="javascript: navigator.id.logout();">Log out</a>
-              </li>
-
-            </ul>
-          </div>
-        </div>
-      </div>
-      
     </div>
+  </header>
 
-    <div class="clearfix"></div>
+  <section id="content" class="site-content">
 
-<div class="container_12">
+    <header class="entry-header"></header>
+    <div class="container_12 grid grid-pad">
+
+     <div class="container_12">
 
 
-		<div class="crafted_content">
+        <noscript>
+            <p style="color: red;">
+                You appear to have JavaScript disabled in your browser. The
+                GUADEC 2017 registration site requires Javascript to be
+                enabled.
+            </p>
+        </noscript>
 
-        Accepted submitted papers:<br /><br />
+
+          All submitted papers:<br /><br />
 
   <div class="paper">
-    <h3>Flow graphs in GNOME and Gtk+</h3>
+    <h3>Resurrecting dinosaurs, what can possibly go wrong</h3>
     <p class="summary">
-    Flowgraphs are awesome. Like no other widget they feel intuitive, are straightforward to use.
-
-In this talk I will take you on a short tour that shows you where to find flow graphs in common Free software.
-
-Then I will show you libgtkflow, a library built upon the GNOME stack that makes it easy for you to use flow graphs in your own Gtk-based applications.
-
-After this I want to discuss the future use of flow-graphs in GNOME-related software.
+    Containerised Application technologies like AppImage, Snappy and Flatpak promise a brave new world for Linux applications, free from the worries of shared libraries and dependency issues. Just one problem, this is a road long travelled before, such as in the application dark ages of Win32 applications and DLLs. And it worked out so wonderfully there... Do we risk a future where, like the resurrected dinosaurs of Jurassic Park, this family of applications will break their containment and start eating our users? This session will try to present a balanced argument about the situation, frankly discussing the benefits promised by these technologies, but highlighting the very real issues and risks their widespread adoption could, and in some cases are, already bringing to the table.<br><br>The talk with cover the promised benefits of application containers, such as AppImage, Snappy and Flatpak. It will detail the empowerment of developers who use the technologies, the ability for upstream projects to have a much closer role in delivering their software, and the benefits that brings to both the upstream projects and their users. But as a counter to those benefits, the session will detail some of the risks and responsibilities that come with that technology. The complexities of library integration, the risk of introducing new forms of dependency issues, and the transference of responsibility for those issues, plus security, away from the current Distributions delivering upstream projects towards those upstream projects directly. As a conclusion, the session will present some suggestions to upstream projects adopting these technologies to start them down the road of accepting those responsibilities directly, or working more closely with existing Distribution projects to share the burdens these technologies now provide.
     </p>
 
 
@@ -88,7 +70,7 @@ After this I want to discuss the future use of flow-graphs in GNOME-related soft
       <tbody>
         <tr>
           <th>Author:</th>
-          <td>grindhold &lt;grindhold@skarphed.org&gt;</td>
+          <td>Richard Brown &lt;ilmehtar@gmail.com&gt;</td>
         <tr>
       <tr>
         <th>Co-presenters:</th>
@@ -98,20 +80,19 @@ After this I want to discuss the future use of flow-graphs in GNOME-related soft
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Short (25 min)</td>
+        <td>40 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+          accepted
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
         <td>
-              GTK, 
           <form action="/papers/tag" method="post" style="display: inline">
-            <input type="hidden" name="paper" value="6">
+            <input type="hidden" name="paper" value="2">
             <input type="text" name="tag">
             <input type="submit" value="Add Tag">
           </form>
@@ -122,9 +103,9 @@ After this I want to discuss the future use of flow-graphs in GNOME-related soft
 
   </div>
   <div class="paper">
-    <h3>The GNOME Newcomers initative</h3>
+    <h3>Automating Decryption of Removable Devices</h3>
     <p class="summary">
-    Since last year GNOME has sported a revamped newcomer experience for developers with the move from GNOME Love to Newcomers (https://wiki.gnome.org/Newcomers/). The talk is a joint talk by Bastian Ilso and Carlos Soriano explaining what&#x27;s new and what lies in the future for GNOME&#x27;s newcomers guide.
+    GNOME has long supported encryption of removable devices such as USB keys; protecting data at rest from casual theft. But the increasing scale of such infrastructure has brought demands for automation. Automation can also enable administrators to protect the encrypted data&#x27;s key even from the bearer of the removable device.<br><br>This talk will cover the current state of automated decryption, including the new algorithms implemented by the Clevis and Tang projects. It will also discuss the current state of integration of Clevis with GNOME, including a demo of automated unlocking and mounting.
     </p>
 
 
@@ -132,7 +113,7 @@ After this I want to discuss the future use of flow-graphs in GNOME-related soft
       <tbody>
         <tr>
           <th>Author:</th>
-          <td>Bastian Ilso &lt;bastianilso@gnome.org&gt;</td>
+          <td>Nathaniel McCallum &lt;npmccallum@redhat.com&gt;</td>
         <tr>
       <tr>
         <th>Co-presenters:</th>
@@ -142,13 +123,104 @@ After this I want to discuss the future use of flow-graphs in GNOME-related soft
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Short (25 min)</td>
+        <td>40 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="3">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>The state of Qt integration in GNOME</h3>
+    <p class="summary">
+    In this talk I will cover how we advanced with how well are Qt applications integrated into the overall GNOME experience.<br><br>Topics covered will include the state of the Adwaita and Highcontrast themes, new QGnomePlatform (abstract platform theme backend for GNOME) features and Wayland support.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Martin Bříza &lt;mbriza@redhat.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+                in progress
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="4">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Why I don&#x27;t use GNOME any more</h3>
+    <p class="summary">
+    This talk was submitted on behalf on Michael Dorrington: michael.dorrington@member.fsf.org<br><br>I have a talk proposal for the upcoming GNOME Conference in Manchester (July 28th - August 2nd 2017).<br><br>The key points would be:<br><br>1. GNOME developers not listening to users.<br><br>2. Usability / stability issues.<br><br>3. Free Software issues.  Putting the GNU back into GNU Network Object Model Environment.<br><br>I&#x27;ve already given this talk partially at Manchester Free Software in August 2016, see:<br><br>If you want further details or clarification then just ask.<br><br>http://lists.nongnu.org/archive/html/fsuk-manchester/2016-08/msg00006.html
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Sam Thursfield &lt;ssssam@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              Sam Thursfield
+              <form action="/papers/copresenter/add" method="post" style="display: inline">
+              <input type="hidden" name="paper" value="8">
+              <input type="text" name="email">
+              <input type="submit" value="Add copresenter">
+              </form>
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
@@ -165,11 +237,9 @@ After this I want to discuss the future use of flow-graphs in GNOME-related soft
 
   </div>
   <div class="paper">
-    <h3>Growing an Open Source Community</h3>
+    <h3>Replacing C library code with Rust: what I learned</h3>
     <p class="summary">
-    Open source projects are always understaffed. In this talk methods to increase the public visibility of your project as well as gain, keep and grow newcomers to maintainers will be presented.
-
-All methods are shown on the practical example and how they have - or not have - proven to be useful for the coala community. They focus on lowering the entry barrier as much as possible as well as rewarding successes and building a continuous learning process with the community.
+    I have been working on replacing the C code in librsvg, GNOME&#x27;s SVG rendering library, with Rust.  Rust is one of the few high-level languages that actually generates object code, which in turn can be linked into compiled C code.<br><br>What started as an experiment in replacing gnarly C code with clean Rust code, eventually turned into a full porting effort.  Librsvg&#x27;s public API/ABI remain the same as before, and only the internals have Rust code in them.  The result is a much safer library with trustworthy code.  Not only is the code safe by Rust&#x27;s nature; it now has a bunch of unit tests that would have been very cumbersome to write before.<br><br>This talk will explore:<br><br>* Brief intro to Rust&#x27;s benefits and philosophy.<br><br>* Tips for replacing C code with Rust.<br><br>* Refactorings that are needed in C to replace it with Rust.<br><br>* Refactorings that are possible once Rust is in place.<br><br>* Going from a codebase with zero unit tests to one that has a bunch of tests!<br><br>* Having a mixture of C and Rust code for certain implementation patterns.<br><br>* Replacing scary C parsers with safe Rust parsers.<br><br>* How Rust clarified my thinking.<br><br>* Can distros ship this?<br><br>* Should we replace GNOME library code with Rust, in general?
     </p>
 
 
@@ -177,7 +247,7 @@ All methods are shown on the practical example and how they have - or not have -
       <tbody>
         <tr>
           <th>Author:</th>
-          <td>Lasse Schuirmann &lt;lasse.schuirmann@gmail.com&gt;</td>
+          <td>Federico Mena Quintero &lt;federico.mena@gmail.com&gt;</td>
         <tr>
       <tr>
         <th>Co-presenters:</th>
@@ -187,17 +257,18 @@ All methods are shown on the practical example and how they have - or not have -
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Short (25 min)</td>
+        <td>40 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+          accepted
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
         <td>
+              rust platform libraries refactoring, 
           <form action="/papers/tag" method="post" style="display: inline">
             <input type="hidden" name="paper" value="9">
             <input type="text" name="tag">
@@ -210,19 +281,9 @@ All methods are shown on the practical example and how they have - or not have -
 
   </div>
   <div class="paper">
-    <h3>What makes a web service free as in freedom?</h3>
+    <h3>The Inbetweens — why transitions matter.</h3>
     <p class="summary">
-    GNOME provides a complete free software desktop. If you run it yourself you have all the benefits of free software, the freedoms to use, study, share, and improve the software. You are in control of what you do with your computer.
-
-The situation is different when using software which is run by others as a service, even if these others run free software. There you don&#x27;t have control about what software is run and how. What does that mean for your freedoms? How much control do you still have? Do you know what is happening to your data? Do you have the freedom to switch to a different service? How is your own freedom affecting the freedom of other users of the same service? There are a lot of questions like these.
-
-There are a couple of approaches how to address these questions. There are the user data manifesto [1], the &quot;Terms of Service; Didn&#x27;t Read&quot; site [2], the GNU ethical repository criteria [3], and other attempts at covering specific aspects of freedom of web services. But there is no definition yet what makes a web service free as in freedom, which is as concise and elegant as the free software definition is.
-
-This presentation will give an overview of where we are, what approaches to defining the freedom of web services exist, and what is missing. It&#x27;s intended to start a discussion which leads to a definition of what a web service has to provide to give users the same freedom as they have when running free software themselves. This is the beginning of a journey and everybody who cares about freedom is invited to join.
-
-[1]: https://userdatamanifesto.org/
-[2]: https://tosdr.org/
-[3]: https://www.gnu.org/software/repo-criteria.en.html
+    After spending considerable amount of time prototyping designs for GNOME, over and over again I&#x27;ve met with resistance to transitions as being a &quot;waste of CPU/GPU time&quot; and not enjoying a wide acceptance among developers.<br><br>I&#x27;ll present my case as to why transitions are helpful conveying meaning and spatial awareness.
     </p>
 
 
@@ -230,7 +291,7 @@ This presentation will give an overview of where we are, what approaches to defi
       <tbody>
         <tr>
           <th>Author:</th>
-          <td>Cornelius Schumacher &lt;schumacher@kde.org&gt;</td>
+          <td>Jakub Steiner &lt;jimmac@gmail.com&gt;</td>
         <tr>
       <tr>
         <th>Co-presenters:</th>
@@ -240,17 +301,19 @@ This presentation will give an overview of where we are, what approaches to defi
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Short (25 min)</td>
+        <td>25 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+          accepted
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
         <td>
+              design, 
+              animation, 
           <form action="/papers/tag" method="post" style="display: inline">
             <input type="hidden" name="paper" value="10">
             <input type="text" name="tag">
@@ -263,11 +326,9 @@ This presentation will give an overview of where we are, what approaches to defi
 
   </div>
   <div class="paper">
-    <h3>Inspector Gadget</h3>
+    <h3>State of the Builder</h3>
     <p class="summary">
-    Many new terms have entered the GTK vocabulary the last year, like gadgets, css nodes or box models.
-
-This talk will explain and showcase these new developments in GTK&#x27;s rendering pipeline and attempt an outlook into the future.
+    Another yearly update on what Builder can do for you, what has been added, and how your contribution workflow can be simplified.<br><br>Some topics include:<br><br> - Making your development setup quick &amp; easy w/ Flatpak<br> - Profiling your project to find performance issues<br> - New build systems and integration points for plugin authors<br> - Debugging your project<br> - How to quickly start contributing to an existing project
     </p>
 
 
@@ -275,7 +336,7 @@ This talk will explain and showcase these new developments in GTK&#x27;s renderi
       <tbody>
         <tr>
           <th>Author:</th>
-          <td>Benjamin Otte &lt;company@fedoraproject.org&gt;</td>
+          <td>Christian Hergert &lt;christian.hergert@gmail.com&gt;</td>
         <tr>
       <tr>
         <th>Co-presenters:</th>
@@ -285,13 +346,13 @@ This talk will explain and showcase these new developments in GTK&#x27;s renderi
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Short (25 min)</td>
+        <td>40 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+          accepted
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
@@ -308,11 +369,9 @@ This talk will explain and showcase these new developments in GTK&#x27;s renderi
 
   </div>
   <div class="paper">
-    <h3>Flatpak status update and future plans</h3>
+    <h3>Different ways of outreaching newcomers</h3>
     <p class="summary">
-    Flatpak (previously xdg-app) is a new system for desktop application bundling and deployment. It allows you to build an application once and then deploy on all linux distributions, running in a sandboxed environment.
-
-This talk will give a status update on where flatpak is as a project, and how Gnome is using it. Then it will talk about future plans, focusing on what is needed going forward to make Gnome applications work well in a sandboxed environment.
+    Due to the amount of bugs in several GNU/Linux projects such as GNOME or Fedora, good volunteers and new contributors are crucial to fix them and make the projects better. <br>I emphasized the phrase good volunteers and new good contributors because is not only to have a positive willing to do things here.<br>Many other factors besides the knowledge of the project are fundamental, like interaction, usability, English skills, GNOME style in programming and following the pattern of designing.<br>In my local community I have encountered many pros and cons during almost six years of promoting the Fedora and GNOME projects in universities and social events. During my talk I will share those different experiences and the vulnerabilities and improvements I faced in the way.
     </p>
 
 
@@ -320,7 +379,7 @@ This talk will give a status update on where flatpak is as a project, and how Gn
       <tbody>
         <tr>
           <th>Author:</th>
-          <td>Alexander Larsson &lt;alexander.larsson@gmail.com&gt;</td>
+          <td>Julita Inca &lt;yrazes@gmail.com&gt;</td>
         <tr>
       <tr>
         <th>Co-presenters:</th>
@@ -330,13 +389,13 @@ This talk will give a status update on where flatpak is as a project, and how Gn
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Long (45 min)</td>
+        <td>25 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+          accepted
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
@@ -353,9 +412,9 @@ This talk will give a status update on where flatpak is as a project, and how Gn
 
   </div>
   <div class="paper">
-    <h3>Integration of Qt applications</h3>
+    <h3>Starting with GTK</h3>
     <p class="summary">
-    This talk will cover basic information and possibilities of Qt Platform Abstraction and present actual result of our attempt to integrate Qt applications into Gnome, namely QGnomePlatform and Adwaita-qt projects.
+    Most of the applications that GNOME are programmed in GTK (among other programming languages), and as it well known that the majority of attendances at GUADEC are programmers that have used GTK at least once; learning it, took me a while to finally teach it to newcomers. <br>It is not enough to have your hands dirty to program in GTK, it is also necessary to follow patterns that GNOME have set for its projects. <br>I will show basics forms that I have done in some workshops in my local community according to the Web documentation available, and also propose a way to teach GTK for newcomers and demonstrate that the advantages of learning GTK are beyond the GNOME project.
     </p>
 
 
@@ -363,7 +422,7 @@ This talk will give a status update on where flatpak is as a project, and how Gn
       <tbody>
         <tr>
           <th>Author:</th>
-          <td>Jan Grulich &lt;jgrulich@redhat.com&gt;</td>
+          <td>Julita Inca &lt;yrazes@gmail.com&gt;</td>
         <tr>
       <tr>
         <th>Co-presenters:</th>
@@ -373,17 +432,106 @@ This talk will give a status update on where flatpak is as a project, and how Gn
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Short (25 min)</td>
+        <td>25 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+              rejected
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
         <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="13">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>nilenso: a democratic corporate experiment</h3>
+    <p class="summary">
+    nilenso is a technology consulting firm based out of Bangalore, India. We are structured as a corporate democracy; our company was founded on principles of radical openness and transparency.<br><br>We have been able to build a profitable business, while empowering ourselves to make our own collective decisions. Our founding values are reflected in all facets of our functioning, from how we formulate strategy, to how we conduct our finances, to how our review and compensation processes work.<br><br>In this talk, I&#x27;d like to walk through how we&#x27;ve been able to balance the demands of these principles with effectively running a commercial, for-profit organisation. My hope is that our experiences and ideas can find broader application outside our co-operative structure.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Deepa Venkatraman &lt;deepa@nilenso.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="14">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Flatpak and KDE</h3>
+    <p class="summary">
+    Flatpak is a tool providing new and easy way how to distribute desktop applications. While it is pretty well supported in Gnome, we in KDE have been trying to catch up and offer same experience. In this talk I will share with you what we have been lately up to and what we accomplished during last year.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Jan Grulich &lt;grulja@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+              Flatpak, 
+              KDE, 
+              Qt, 
           <form action="/papers/tag" method="post" style="display: inline">
             <input type="hidden" name="paper" value="15">
             <input type="text" name="tag">
@@ -396,17 +544,9 @@ This talk will give a status update on where flatpak is as a project, and how Gn
 
   </div>
   <div class="paper">
-    <h3>GNOME-Games graph based health analytics</h3>
+    <h3>Seasons of Debian:GSoC and Winter of Outreachy</h3>
     <p class="summary">
-    An extension of gnome-continuous.
-
-A graph based application to be able to check the health of the GNOME games built using python and neo4j.
--*- Check which gnome modules builds are failing/passing/timing out/missing from gnome-continuous builds
--*- Find their dependencies
--*- Run queries on a graph to find out what possibly broke a module. For example: Find out which dependencies are used exclusively by the failing modules as an indication that the dependency is broken.
-
-** Source code: https://github.com/sahilsareen/GNOMEGamesHealthAnalytics
-** Demo: https://www.youtube.com/watch?v&#x3D;OUzUfVo77PI
+    *****************2 Speakers***********<br>We would talk about two major open source initiatives – Google Summer of Code and Outreachy.<br><br>Urvika would share her experience with “Outreachy”- Outreachy is a similar program like GSoC but it helps people from under-represented groups such as females and LGBTQ, to get involved in open source software. <br>She would like to share her journey of getting into Outreachy in the hopes of inspiring budding female developers like her.<br>She would talk about how being on Outreachy team changed her perspective from “how to code&quot; to that of “how to contribute&quot;.<br><br>Pranav would be sharing his working and learning experience during Google Summer of Code’16 with Debian.<br><br>We would share how we got into these programmes and what it takes to successfully complete it. <br>Hoping it would help someone having questions like “How to get started with Open Source” and “How Can I contribute” to &quot;How I Went From Newbie to Open Source Project Contributor &quot; as expected to speak in this track.<br><br>Both Urvika and Pranav worked on the same project – Lumicall. They would talk about “Lumicall” which is a free and convenient app for encrypted phone calls from Android. It uses the SIP protocol to interoperate with other apps and corporate telephone systems. We would be explaining the work we did using Android and Java to add new features into the existing application and how to pace the learning curve.<br><br>To explain what kind of work we did under these programs, Urvika would also give a brief about a few concepts that she worked on using Android/Java<br>Explaining what “WhiteLabelling” is and how can we implement it in Android<br>Working with productFlavors, How to add a silent mode feature by specifying time and weekdays, How to set bubble background image in Chat/Message screen using 9 Patch images.<br><br>Pranav would briefly explain about adding PUBLISH Support to Lumicall and developing a library for adding quick enroll option to Android Applications.
     </p>
 
 
@@ -414,7 +554,7 @@ A graph based application to be able to check the health of the GNOME games buil
       <tbody>
         <tr>
           <th>Author:</th>
-          <td>Sahil Sareen &lt;ssareen@gnome.org&gt;</td>
+          <td>Pranav Jain &lt;contact@pranavjain.me&gt;</td>
         <tr>
       <tr>
         <th>Co-presenters:</th>
@@ -424,13 +564,13 @@ A graph based application to be able to check the health of the GNOME games buil
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Short (25 min)</td>
+        <td>25 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+              rejected
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
@@ -447,11 +587,95 @@ A graph based application to be able to check the health of the GNOME games buil
 
   </div>
   <div class="paper">
-    <h3>GTK: are we in the future, yet?</h3>
+    <h3>GCompris the joruney untold</h3>
     <p class="summary">
-    GTK is an old tool kit; it turns 20 in 2007. While its history is a long, unbroken chain of progress, GTK is, at its heart, heavily based on how we used to do things in GUI tool kits two decades ago. Over the past 5 years, since the 3.0 release, the GTK team has been hard at work into bringing the tool kit internals kicking and screaming into the XXI century. This has inevitably caused some friction with application developers, but it has also opened an entire world of possibilities.
+    GCompris can be seen as a success in the Free Software community in reaching a large audience by leveraging the multi-platform nature of Qt. <br>GCompris is a high-quality educational software suite comprising of numerous activities for children aged 2 to 10. It started its journey in 2002 with Gnome and gtk+. It has been a long and wonderful journey since then. However we started on a journey to replace the gtk+ version with Qt version. We have ported 137 activities since then and more are being developed with time.<br>The talk will begin with our so far journey and why we decided to port to Qt from gtk+. It will include the uphills of both the gtk+ and Qt and that why we decided to make such an important decision to write GCompris completely from scratch after 12 years of its development and how it has been so far.<br>Then it will cover the journey of an infant to a contributor with GCompris which will also cover different parts of GCompris and will help people who want to contribute to it.<br><br>1. So, the journey starts with an infant who comes across GCompris and explores its different sections from mathematical to language to science and mouse coordination. The activities are divided into various genres and difficulty on the basis of age levels and type of activity which will be shown which helps the infant to grow which is their first involvement with GCompris by using it. GCompris is completely supported in 17 languages and partially supported in 15+ other languages.<br><br>2. The infant then grows to a child and thinks of creating his/her own activity. Then they come across the architecture of GCompris which will be explained in depth in the talk which has:<br>1. A C++ core in src/core<br>2. QML activities in src/activities<br>3. Each activity in its folder<br>4. An activity can extend an other one and provide it a dataset<br>5. At compilation time each activity is zipped in a ‘rcc’ file which is loaded at run time. <br><br>3. The child than grows and gets curious further on how to contribute. Then he finally learns how to get started in the project that he played while he was an infant so that he/she can be equip other infants with more activities.<br>They learn about <br>1. GCompris Codebase which covers activity Development<br>2. Compilation chain in CMake<br>3. Core Development which includes<br>a) Activity API<br>b) C++ Widgets<br>c) QML Widgets<br>4. Documentation<br>5. Graphics<br>6. Packaging<br>7. Localization.<br><br>4. Then the infant who earlier played with the activities finally decides the area of interest and finally turns into a contributor :)<br><br>The talk would cover our success story so far and how we are helping an infant to grow and finally contribute to a project they once used along with the future state which would be to take GCompris to as many schools/kids as we can so that every infant understand their power and contributes to the community.<br>It will also cover the role of teachers who turn into contributors to facilitate and help their pupils and bringing/making this academia a fun way to learn.
+    </p>
 
-In this talk I&#x27;ll outline where we are coming from, what has changed, where we&#x27;re going in the future — and how we&#x27;ll get there.
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Divyam Madaan &lt;divyam3897@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="17">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>GNOME to 2020 and beyond</h3>
+    <p class="summary">
+    In this talk, I&#x27;ll have a look at some of the challenges that GNOME faces at the moment, a brief look into the future, and how we can meet those head on and thrive!<br><br>(Note to papers people: This may magically turn into a keynote)
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Neil McGovern &lt;neilgnome@halon.org.uk&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+          accepted
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="18">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Continuous: Past, Present, and Future</h3>
+    <p class="summary">
+    Since 2012, a service in the GNOME infrastructure has been constantly building GNOME modules, committing the result to Ostree, and running automated tests on the whole OS. From a single Git commit to a full blown virtual machine in a matter of minutes. This service is called GNOME Continuous, our own continuous integration and delivery pipeline.<br><br>Continuous has been the major driver to improve the quality of the whole GNOME project: for developers, by building their work; for designers, by providing a bootable VM to perform design iteration and QA; to newcomers, by ensuring that tools like jhbuild would be more reliable; to distributors and OSVs, who could ensure their products would be based on a reliable set of components.<br><br>In this presentation we will talk about how Continuous came to be, thanks to the work of Colin Walters; how it works; what are the goals of a CI/CD pipeline like Continuous; and where do we go from here.
     </p>
 
 
@@ -469,17 +693,64 @@ In this talk I&#x27;ll outline where we are coming from, what has changed, where
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Short (25 min)</td>
+        <td>40 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+          accepted
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
         <td>
+              infrastructure, 
+              development, 
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="19">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Building interfaces from the future</h3>
+    <p class="summary">
+    Animations are the future of interface design. They enable developers to make interfaces more understandable by offloading processes from the user&#x27;s brain to the screen. However, in many cases animations are simply added as transitions between independently designed screens. This can result in animations contradicting each other spatially. I co-wrote an article about why this is a problem [1] and outlined a solution: Designing semantic components which change over time, and then using these to compose interfaces.<br><br>Even though the industry seems to largely agree that this is the way forward, there are very few interfaces implementing these ideas. I believe the main reason for this is that the current generation of layout technologies is built for static layouts with strict hierarchies. This makes it prohibitively difficult to build interfaces where components move fluidly between different states.<br><br>I will show some interface prototypes I built and explain why they were so difficult to implement with current technology. Finally, I will outline some ideas for a better layout API, to make building awesome, fluid interfaces from the future more feasible.<br><br>[1] https://alistapart.com/article/motion-with-meaning-semantic-animation-in-interface-design
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Tobias Bernard &lt;tobias@bernard.im&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+          accepted
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+              design, 
+              animation, 
           <form action="/papers/tag" method="post" style="display: inline">
             <input type="hidden" name="paper" value="20">
             <input type="text" name="tag">
@@ -492,102 +763,9 @@ In this talk I&#x27;ll outline where we are coming from, what has changed, where
 
   </div>
   <div class="paper">
-    <h3>How your package is being translated...</h3>
+    <h3>Please Use GNOME Web</h3>
     <p class="summary">
-    The process of translate strings into different languages is known as &quot;localization&quot;. 
-This is because it is part of the software development lifecycle, and it is the process of adapting the software into a specific country/region/market. The talk will go through the localization workflow in Gnome, Fedora and Openstack, and also introduce latest technology called &#x27;Zanata&#x27; which can support successful localization environment for Fedora and Openstack.
-    </p>
-
-
-    <table>
-      <tbody>
-        <tr>
-          <th>Author:</th>
-          <td>Noriko Mizumoto &lt;noriko@redhat.com&gt;</td>
-        <tr>
-      <tr>
-        <th>Co-presenters:</th>
-        <td>
-              Alex Eng, Pravin Satpute
-        </td>
-      </tr>
-      <tr>
-        <th>Talk length:</th>
-        <td>Long (45 min)</td>
-      </tr>
-      <tr>
-        <th>Status:</th>
-        <td>
-      accepted, attendance confirmed
-</td>
-      </tr>
-      <tr>
-        <th>Tags:</th>
-        <td>
-              Translation, 
-              Localization, 
-              Internationalization, 
-          <form action="/papers/tag" method="post" style="display: inline">
-            <input type="hidden" name="paper" value="21">
-            <input type="text" name="tag">
-            <input type="submit" value="Add Tag">
-          </form>
-        </td>
-      </tr>
-    </tbody>
-    </table>
-
-  </div>
-  <div class="paper">
-    <h3>Sharing Experiences of GNOME.Asia Summit 2016</h3>
-    <p class="summary">
-    1.How and when I decided to organize the summit.
-2.After winning the bid, how everything started.
-3.My good and bad experiences during the process of organizing the conference.
-4.Would like to extend my thanks to those, without whose support it would never be possible
-    </p>
-
-
-    <table>
-      <tbody>
-        <tr>
-          <th>Author:</th>
-          <td>Shobha Tyagi &lt;tyagishobha@gmail.com&gt;</td>
-        <tr>
-      <tr>
-        <th>Co-presenters:</th>
-        <td>
-              none
-        </td>
-      </tr>
-      <tr>
-        <th>Talk length:</th>
-        <td>Short (25 min)</td>
-      </tr>
-      <tr>
-        <th>Status:</th>
-        <td>
-      accepted, attendance confirmed
-</td>
-      </tr>
-      <tr>
-        <th>Tags:</th>
-        <td>
-          <form action="/papers/tag" method="post" style="display: inline">
-            <input type="hidden" name="paper" value="22">
-            <input type="text" name="tag">
-            <input type="submit" value="Add Tag">
-          </form>
-        </td>
-      </tr>
-    </tbody>
-    </table>
-
-  </div>
-  <div class="paper">
-    <h3>WebKit Security Updates</h3>
-    <p class="summary">
-    Major Linux distributions have a problem with WebKit security. Whereas major desktop browsers push automatic security updates directly to users on a regular basis so that users don’t have to worry about updates, Linux users are dependent on their distributions to release updates. Well over 100 vulnerabilities that could allow remote code execution were fixed in WebKit last year, so getting updates out to users is critical. This talk examines the disconnect between how the WebKit project handles security issues upstream and how different major distributions do (or do not) handle security issues, shows that WebKit security issues have widespread impact even for users who do not use a WebKit-based web browser, and discusses the security consequences of the split between the original WebKit API and WebKit2.
+    The web browser is indisputably the single most important component of any operating system, and GNOME is no exception. Cross-platform browsers like Firefox and Google Chrome work decently well everywhere but are excellent nowhere: they will likely never be able to deliver a high-quality user experience comparable to the Microsoft Edge or Safari web browsers. If you haven&#x27;t used one of these two browsers recently, you might not even realize what you&#x27;re missing on Linux. GNOME Web is the only browser that can seriously hope to provide comparable desktop integration and user experience, but it suffers from lack of users and contributors. Distributions that ship GNOME with Firefox, as well as GNOME contributors that primarily use other browsers, are seriously harming our effort to improve GNOME Web. To improve quality, we need all GNOME hands on deck to test regular daily usage of GNOME Web, report bugs, and attract new users and contributors.
     </p>
 
 
@@ -605,13 +783,99 @@ This is because it is part of the software development lifecycle, and it is the 
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Short (25 min)</td>
+        <td>25 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+                in progress
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="21">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Variable Fonts for the Linux desktop and beyond</h3>
+    <p class="summary">
+    In September 2016, OpenType 1.8 introduced the biggest change to font formatting in twenty years: support for &quot;variable fonts&quot;, in which complete font families can be compactly encoded into a single file. Variable fonts can declare multiple axes of variation — weight, width, optical size, slant, and more — on which the letterforms can be interpolated in software on the fly. The new format offers considerable benefits for developers and end users, but supporting it will require changes throughout the software stack.<br><br>This talk will explain the new format, how it can be used on Linux systems and other free-software platforms, and what will be entailed in implementing it. Support for variable fonts is already available at the rasterizer level, but enabling GNOME and GTK+ applications to use variable fonts will require changes to how fonts are enumerated on the system, how they are presented to the user, and how they are accessed by toolkit components. The user experience for font selection may need rethinking, and open-source fonts themselves may even need reengineering.  The good news is that proprietary software projects face the same challenges, and free software has an opportunity to help set the standard going forward.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Nathan Willis &lt;n8willis@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="22">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>My learning with GNOME</h3>
+    <p class="summary">
+    I participated in OPW 2013-14 as GNOME Intern, I will share my journey, what all I learnt then.<br>In 2016, I was the GNOME.Asia summit local Organizer. I would love to share my experiences.<br>I also attended GUADEC 2014, GNOME.Asia summit 2015.<br>I will be sharing What I am doing these days.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>shobha tyagi &lt;tyagishobha@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
@@ -628,13 +892,9 @@ This is because it is part of the software development lifecycle, and it is the 
 
   </div>
   <div class="paper">
-    <h3>How do/could we store secrets in GNOME?</h3>
+    <h3>Robustness of GNOME</h3>
     <p class="summary">
-    This is a summary of the infrastructure that GNOME provides to store secrets like passwords, SSH and GPG keys, and X.509 certificates.
-
-Our infrastructure is more or less adequate within GNOME, but it interfaces poorly with other pieces of infrastructure that people use, like Firefox, 2-Factor Authentication hardware, and password managers for mobile devices.
-
-We will describe some use cases and some ways in which GNOME could be improved to accomodate cross-platform, cross-device, cross-team password storage.
+    I&#x27;m Jonathan Kang, a GNOME hacker from China. I currently maintain Logs, and contribute to other projects. My copresenter is Chingkai Chu who is a QA engineer at SUSE and he has been        focused on Gnome testing and openQA for two years.<br><br>We&#x27;ll talk about how currently GNOME applications are tested using different technologies. And then introduce the approach of using openQA to test GNOME applications.<br><br>Our talk can be divided into three parts:<br>1. Why should we do quality assurance<br>    - We&#x27;ll talk about this from a GNOME hacker and a GNOME QA tester&#x27;s view.<br><br>2. The current technologies used in GNOME projects for testing<br>    - It&#x27;s mainly about the methods GNOME community currently uses to do the testing, like dogtail, glib unit test, gnome continuous and etc.<br><br>3. Introduce what I did with openQA for testing my maintained project and discuss the possibility of using it for other projects<br>    - openQA features overview and how we use it in SLE Desktop team<br>    - Gnome automation testing approach using openQA
     </p>
 
 
@@ -642,27 +902,29 @@ We will describe some use cases and some ways in which GNOME could be improved t
       <tbody>
         <tr>
           <th>Author:</th>
-          <td>Federico Mena Quintero &lt;federico@gnome.org&gt;</td>
+          <td>Jonathan Kang &lt;[&#x27;jonathan121537@gmail.com&#x27;, &#x27;jonathankang@gnome.org&#x27;]&gt;</td>
         <tr>
       <tr>
         <th>Co-presenters:</th>
         <td>
-              none
+              Chingkai Chu
         </td>
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Long (45 min)</td>
+        <td>40 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+          accepted
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
         <td>
+              openQA, 
+              testing, 
           <form action="/papers/tag" method="post" style="display: inline">
             <input type="hidden" name="paper" value="25">
             <input type="text" name="tag">
@@ -675,59 +937,9 @@ We will describe some use cases and some ways in which GNOME could be improved t
 
   </div>
   <div class="paper">
-    <h3>Accessibility and the Free Desktop</h3>
+    <h3>Adventures with a forest of OSTrees</h3>
     <p class="summary">
-    There are around 285 million visually impaired people in the world, out of which around 38-39 million are completely blind. One interesting fact is that over 15 million of blind people are from India, and similarly a large number is from different developing or undeveloped countries, and poor socioeconomic status. There is a lot of software available for accessibility, and most of it is extremely unaccessible, both economically and socially. This is where Free Software comes in. Free Software desktops, especially GNOME, have made large strides in accessibility in the last few years, and are proving to be an effective way of reaching these people, introducing them to a whole new world of computers. 
-
-I&#x27;m going to talk about how Free Software enables people to expand upon accessibility software, add regional languages, and helps people in bad socioeconomic settings. I&#x27;ll then proceed to show a 2-3 minute demo of how the universal access features of GNOME work, and what we need to improve.
-    </p>
-
-
-    <table>
-      <tbody>
-        <tr>
-          <th>Author:</th>
-          <td>Gaurav Pareek &lt;me@grv.rocks&gt;</td>
-        <tr>
-      <tr>
-        <th>Co-presenters:</th>
-        <td>
-              none
-        </td>
-      </tr>
-      <tr>
-        <th>Talk length:</th>
-        <td>Short (25 min)</td>
-      </tr>
-      <tr>
-        <th>Status:</th>
-        <td>
-      accepted, attendance confirmed
-</td>
-      </tr>
-      <tr>
-        <th>Tags:</th>
-        <td>
-              accessibility, 
-          <form action="/papers/tag" method="post" style="display: inline">
-            <input type="hidden" name="paper" value="29">
-            <input type="text" name="tag">
-            <input type="submit" value="Add Tag">
-          </form>
-        </td>
-      </tr>
-    </tbody>
-    </table>
-
-  </div>
-  <div class="paper">
-    <h3>A GLib look at structured logging</h3>
-    <p class="summary">
-    Structured logging is a handy feature of modern log systems, like journald. GLib is growing functionality to allow applications to export log messages in structured form, which allows developers and sysadmins to more easily search and sort log messages to find what they&#x27;re looking for.
-
-This talk will introduce the new APIs and give an overview of how applications and libraries should log in the new world order.
-
-(Apologies for the talk title.)
+    A look at some of the work which has been happening recently to allow OSTree to pull OS and flatpak updates from more than just the internet, which will be used in Endless OS.
     </p>
 
 
@@ -745,13 +957,274 @@ This talk will introduce the new APIs and give an overview of how applications a
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Short (25 min)</td>
+        <td>40 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+                in progress
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="26">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>What’s Coverity static analysis ever done for us?</h3>
+    <p class="summary">
+    Various GNOME modules have been building on Coverity Scan for the last year. Has it been finding legitimate bugs, or ones which people are almost never going to hit? What’s the best way to use static analysis? Why should developers care?<br><br>Warning: This talk will contain Jenkins and graphs.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Philip Withnall &lt;philip@tecnocode.co.uk&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+          accepted
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="27">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Recipes - Lessons learned from creating a new app</h3>
+    <p class="summary">
+    Cooking and recipes is not a new topic for the GNOME community.<br>All the way back to 2007, the idea of a GNOME cook book was already around (https://wiki.gnome.org/GnomeCookbook). For one reason or another, we never quite got there - but the idea has stuck around, and after Guadec last year, the two of us got together to finally make GNOME recipes a reality.<br><br>Our talk will cover the original design goals and the evolution of the design from paper mock-ups and ideas, to refining a raw prototype and to the complete application that we have to today. We will touch on the interaction between design and development and how you can be successful in this even when you have to bridge a 7 hour time differential.<br><br>We will take a look ahead at whats coming in 3.26, and how the original design goals are evolving and expanding as we build out the application.<br> <br>On the technical side, we will explore some of the challenges and lessons learned during the development of recipes, and we will explain how writing this application was useful for developing and refining new technologies such as sandboxes, portals and new build systems. There may be an aside about portability.<br><br>Of course, there will be a demo of recipes.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Matthias Clasen &lt;matthias.clasen@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              Emel Elvin Yildiz, Emel Elvin Yildiz
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+          accepted
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="28">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>What Future Internet brings to Endless</h3>
+    <p class="summary">
+    ... and what it can bring to GNOME<br><br>At endlessm.com we&#x27;re betting on the NDN (Named Data Networks, sometimes called CCN: Content Centric Networking) technology for distributed updates of our content apps. This novel (i.e. nearing 20 years in research) technology is really a new way of thinking about how applications relate to data.<br><br>Modern world networking is centred on the IP paradigm: we route addresses, everything ends up talking IP. This vision is a great solution to the problem of having an ubiquitous network that can have a diversity of technologies in all it&#x27;s layers: DVB, ethernet, 3g will become IP that will in turn become HTTP, FTP, ICMP…<br><br>But modern day communications are increasingly about Data. NDN/CCN routes Data and Interest packets so that you don&#x27;t have to care about hosts anymore, solving a lot of complex problems in the data-sharing apps that IP encompases (think mobility, peer to peer, CDNs…).<br><br>After going through the base principles of NDN/CCN, we&#x27;ll explain how Endless evisions to use it and how GNOME can make use of that shift of networking concept.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Niv Sardi &lt;xaiki@endlessm.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="29">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Progressive Web App - Future of Web</h3>
+    <p class="summary">
+    A progressive web app is, more or less, another word for a mobile web app – an application that creates a native-like experience through the web. Unlike a native app or a hybrid app that you have to install through app stores, a progressive web app can be viewed simply by going to a URL in your browser.<br><br>The progressive part of the name is something that has come about more recently, and it is certainly picking up steam. It isn’t just a new fancy word for the sake of it, it does imply more than just a native-like app that is hosted on the web. It may depend on who you ask but in general a progressive app may:<br><br>Make use of modern web based APIs<br>Use service workers for offline capability<br>Enhance “progressively” based on the capabilities of the device it is running on<br>Be able to be installed to the users home screen<br><br>Although progressive web apps are gaining popularity, they are still a long way from mainstream use. The two biggest limiting factors are perhaps that many native APIs are still not exposed directly to the browser, and there is not widespread support in browsers for technology important to progressive web apps like service workers (more on that later). There is also the issue of the learning curve for users, most people are acustomed to installing apps from an app store now, but might be confused about “installing” an app from the web. Until these issues are solved, we will likely be creating hybrid apps with Cordova (which gives us access to all of the native APIs we need) for a while to come.<br><br>Regarding Myself<br><br>I have been Google Summer of Code 2016 student and GCI mentor under Mifos Initiative. I have been working heavily on progressive web app since 2016. My GSoC project was also to create a PWA for the community. I would really like to spread the world about PWA.<br><br>My github profile - https://github.com/mbj36
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Mohit Kumar Bajoria &lt;mohitbajo36@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+              web, 
+              pwa, 
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="30">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Modern Javascript in GNOME</h3>
+    <p class="summary">
+    GNOME 3.24 brought a lot of improvements in GJS, the Javascript language bindings for GNOME, that power GNOME Shell, Polari, GNOME Documents, and many other apps.<br><br>We moved to a more modern version of the Javascript engine. We gained support for a lot of cool language features that take some of the rough edges off of Javascript&#x27;s shady reputation. For GNOME 3.26 we&#x27;ll continue this modernizing process, and start improving the developer experience in GJS as well.<br><br>Here&#x27;s what you&#x27;ll see in this talk:<br>- Cool stuff you never knew you could do in GJS!<br>- How to modernize your app with ES6 features!<br>- Debugging, documentation, and other developer tools!<br>- Sneak peek of what&#x27;s to come in 3.26 and how you can help!
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Philip Chimento &lt;philip.chimento@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+          accepted
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+              javascript, 
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="31">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>can you even sync...</h3>
+    <p class="summary">
+    This is a talk for anyone looking at building applications that need to play media on multiple network-connected devices in sync. Or anyone who didn&#x27;t know they wanted to, but now can&#x27;t wait to try.<br><br>While GStreamer has supported fairly tight synchronisation across the network for a while now, this has generally needed some intimate understanding of the correct incantations, and a blood pact with dark forces to be used successfully in applications.<br><br>With the recent work on gst-sync-server, the fearless GStreamer developers have been standing resolutely between our gentle application developers and the terrifying triad of drift, network jitter, and clock distribution.<br><br>In this talk, we&#x27;ll talk about how gst-sync-server can be used, peek into its petrifying internals, and talk about potential applications that might be interesting to the GNOME community in particular.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Arun Raghavan &lt;arun@accosted.net&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
@@ -768,11 +1241,9 @@ This talk will introduce the new APIs and give an overview of how applications a
 
   </div>
   <div class="paper">
-    <h3>One does not simply take a bus</h3>
+    <h3>Dreaming of a better home media experience</h3>
     <p class="summary">
-    An important aspect of humane interfaces is meeting the needs of a variety of people. They all have different skills, restrictions and whims. How do you figure out what exactly those are?
-
-In this presentation I&#x27;ll talk about how I used user interviews and personas for that purpose, using them as tools for discussions and implementation of Public Transportation in GNOME Maps.
+    We find ourselves in a world where there are an increasing number of ecosystems of computing devices and appliances that (try to) work seamlessly together to allow people to listen and watch what they want, when, where and how they want to in their homes -- on their TVs, tablets, through multi-room speakers, and so on.<br><br>We&#x27;ve made some headway in enabling these in GNOME -- via the Sharing panel, and the massive amount of plumbing underneath it -- but there is a huge gap between what we have, and where I think we need to be.<br><br>So this talk is in three parts:<br><br>1. Where we are -- both in terms of the user experience (Sharing) and the software stack (Rygel, GUPnP, PulseAudio, GStreamer)<br><br>2. Where I&#x27;d like us to be -- what kinds of connectivity do we want to enable? Is it possible to do this with commodity hardware?<br><br>and<br><br>3. How we can get there -- existing pieces to build on top of, missing pieces of the stack to add, and tying it together in a way users can &quot;get&quot;
     </p>
 
 
@@ -780,7 +1251,7 @@ In this presentation I&#x27;ll talk about how I used user interviews and persona
       <tbody>
         <tr>
           <th>Author:</th>
-          <td>Andreas Nilsson &lt;andreasn.pixel@gmail.com&gt;</td>
+          <td>Arun Raghavan &lt;arun@accosted.net&gt;</td>
         <tr>
       <tr>
         <th>Co-presenters:</th>
@@ -790,20 +1261,148 @@ In this presentation I&#x27;ll talk about how I used user interviews and persona
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Short (25 min)</td>
+        <td>40 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+          accepted
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
         <td>
-              maps, 
-              ux, 
-              outreach, 
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="33">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Flatpak status update and future plans</h3>
+    <p class="summary">
+    Flatpak is an application distribution and runtime system that brings sandboxed linux desktop apps to the masses. <br><br>This talk will give a status update of the flatpak project and what has happened in this year. It will also talk about new and interesting things happening in the echosystem around flatpak and where we&#x27;re going in the future.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Alexander Larsson &lt;alexander.larsson@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+          accepted
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="34">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Rethinking multimedia on the desktop</h3>
+    <p class="summary">
+    Pinos is a media server for the desktop. It can be used to access multimedia devices such as cameras and audio cards in a unified way. Thanks to its graph based processing, interesting new applications can be written such as audio servers or we can rethink how we can do video sharing in sandboxed applications. This talk explains the design and implementation of the Pinos media server .
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Wim Taymans &lt;wtaymans@redhat.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+              , 
+              multimedia, 
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="35">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Decentralised open communication with Matrix.org</h3>
+    <p class="summary">
+    Matrix.org is a relatively new open standard for decentralised realtime communication - providing an open global network (including end-to-end encryption) that links together communication silos such as Slack, IRC, Gitter, Telegram, XMPP etc.  Matrix has gained some popularity in the GNOME developer community since GIMPNet was bridged into the wider Matrix ecosystem in March (https://mail.gnome.org/archives/desktop-devel-list/2017-March/msg00033.html), and meanwhile Matrix&#x27;s goals of entirely open source and democratised communication are quite aligned with the ethos of the GNOME project.<br><br>This talk will be a formal introduction and demonstration of the Matrix ecosystem, its APIs and spec, its clients/servers/bridges/bots, its end-to-end encryption, its goals and its current status, as given by the project lead.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Matthew Hodgson &lt;matthewatmx@googlemail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+          accepted
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
           <form action="/papers/tag" method="post" style="display: inline">
             <input type="hidden" name="paper" value="36">
             <input type="text" name="tag">
@@ -816,9 +1415,9 @@ In this presentation I&#x27;ll talk about how I used user interviews and persona
 
   </div>
   <div class="paper">
-    <h3>GNOME Music: State of the Union</h3>
+    <h3>Functional programming and GTK+</h3>
     <p class="summary">
-    This talk intents to introduce GNOME Music to the audience, briefly go through it&#x27;s development history, analyze it&#x27;s current state, and announce the plans for the future.
+    The talk will start with an explanation of the concept of the functional programming paradigm and how it compares with the popularly used imperative programming style. I will use Scala for demonstration of examples as that is something I use every day at work.<br><br>The more interesting bit would be to demonstrate how people can use the highly performant, scalable and robust functional code along with GTK+.<br><br>My blog post shows an example: https://blogs.gnome.org/ssareen/2017/04/19/lets-get-functional-around-gtk/<br><br>Here is a sample twitter streaming project which is built with Apache Spark, Scala and GTK+ which I intent to demonstrate in the end with the audience tweeting and the streaming app showing the tweet in a GTK+ dialog box: https://github.com/sahilsareen/GNOMETweetsOfLove<br><br>About me: I&#x27;m a foundation member(2+ years) and Game Dev at GNOME, own releasing gnome-chess and gnome-sudoku amongst other work around the games. I work full time at Amazon Ireland as a Big Data developer. I&#x27;ve presented a talk each at the previous GUADEC and GNOME Asia conference.
     </p>
 
 
@@ -826,7 +1425,7 @@ In this presentation I&#x27;ll talk about how I used user interviews and persona
       <tbody>
         <tr>
           <th>Author:</th>
-          <td>Felipe Borges &lt;feborges@redhat.com&gt;</td>
+          <td>Sahil Sareen &lt;sahil.sareen@hotmail.com&gt;</td>
         <tr>
       <tr>
         <th>Co-presenters:</th>
@@ -836,17 +1435,19 @@ In this presentation I&#x27;ll talk about how I used user interviews and persona
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Short (25 min)</td>
+        <td>25 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+              rejected
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
         <td>
+              GTK+, 
+              Functional Programming, Apache Spark, Scala, 
           <form action="/papers/tag" method="post" style="display: inline">
             <input type="hidden" name="paper" value="37">
             <input type="text" name="tag">
@@ -859,13 +1460,9 @@ In this presentation I&#x27;ll talk about how I used user interviews and persona
 
   </div>
   <div class="paper">
-    <h3>Anatomy of Endless OS</h3>
+    <h3>hotdoc as a unified documentation system for GNOME</h3>
     <p class="summary">
-    Endless OS is an operating system based on GNOME, and is one of the first real world deployments to make use of innovative distribution technologies such as OSTree, xdg-app and gnome-software.
-
-During this presentation, I will walk through the architecture of the operating system and the infrastructure that we use at Endless to maintain it and deploy it, including the challenges we faced and what lies ahead for us.
-
-[Note: Endless OS is not at the moment available for download, but it will be when GUADEC comes around]
+    hotdoc is a modular documentation tool with a few interesting features.<br><br>It is quite capable at documenting C / GObject projects, but also offers a nice (citation needed), markdown-based interface for non-developers. A key feature that will be demonstrated is the &quot;nestability&quot; of a hotdoc project, which can facilitate the interaction between library maintainers and the GNOME developer portal as a whole.<br><br>Don&#x27;t expect too many jokes, I&#x27;m not very witty.
     </p>
 
 
@@ -873,7 +1470,7 @@ During this presentation, I will walk through the architecture of the operating 
       <tbody>
         <tr>
           <th>Author:</th>
-          <td>Cosimo Cecchi &lt;cosimoc@gnome.org&gt;</td>
+          <td>Mathieu Duponchelle &lt;mduponchelle1@gmail.com&gt;</td>
         <tr>
       <tr>
         <th>Co-presenters:</th>
@@ -883,13 +1480,142 @@ During this presentation, I will walk through the architecture of the operating 
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Long (45 min)</td>
+        <td>25 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="38">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>On mice, touchpads and other rodents</h3>
+    <p class="summary">
+    In the beginning there was a keyboard. Then came the mouse. Then the touchpad, the mouse wheel, the trackpoint, the graphics tablet, the joystick, the touchscreen, the touchpad without buttons but with pressure, the pen tablet with touch, the joysticks with touchpads, the touchpad with trackpoints, the touch-capable mouse, gestures, ... it all got rather complicated.<br><br>Over the last few years, we had a massive revamp of the input stack on our desktops. This talk is a tour starting with lowest levels of contemporary input devices and their common features and device types, going up through the intermediate levels where we add a lot of the software features (like buttons on a touchpad) to the new bits and pieces we&#x27;re adding to X and Wayland to support these features all the way to the application.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Peter Hutterer &lt;peter.hutterer@redhat.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+                in progress
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="39">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>GNOME on tablets and SBCs</h3>
+    <p class="summary">
+    This talk is about making GNOME run on tablets and Small Board Computers. There are 3 aspects to this:<br><br>1) Hardware enablement, before we can run GNOME we really want all the hardware of a device to work properly with the mainline kernel, a standard Linux distro and all FOSS drivers. The first part of the talk will look at what has been accomplished here recently and how this is a fixed problem if you pick the right hardware.<br><br>2) Running in a resource constrained environment, many of these devices have only 1GB of RAM, GNOME currently does not work well with only 1GB of RAM, what can be done to make GNOME use less RAM?<br><br>3) On tablets typically there is no touchscreen, GNOME has limited support for touchscreen only device, what can be done to improve this ?<br><br>The 2nd and 3th parts of this talk are intended to start a discussion on these topics and to enlist the help of the audience to work on improving this.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Hans de Goede &lt;hdegoede@redhat.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="40">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>GNOME newest releases in openSUSE Tumbleweed</h3>
+    <p class="summary">
+    Thanks to Open Build Service (OBS) and openQA, the openSUSE community is handle to delivered each new GNOME major (and minor) releases to our users, tested, in less than 24h.<br><br>This is openSUSE Tumbleweed and this talk will discuss how we are able to achieve this, shipping always up-to-date and always testing GNOME desktop in a continuous way.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Frederic Crozat &lt;fred@crozat.net&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
@@ -906,11 +1632,9 @@ During this presentation, I will walk through the architecture of the operating 
 
   </div>
   <div class="paper">
-    <h3>GNOME Software: You&#x27;ll Never Guess What Comes Next</h3>
+    <h3>A desktop for everyone</h3>
     <p class="summary">
-    GNOME Software is an project that started life as an application installer, and over time picked up features such as updating system firmware, distribution upgrades, installation of fonts, codecs, language packs, and handling RPM files and Flatpak bundles. With screenshots, long descriptions and now user-submitted ratings and reviews we&#x27;re on parity with several other appstores like the Google play store and provide a fast, stable and beautiful software center for Fedora. In this talk I will explain about how we built this beast, show off some new features and also talk about the future. I&#x27;ll allow lots of time for questions and comments.
-
-Notes: This is a talk that Richard Hughes is going to present at Flock and me at GUADEC. Also happy to do a short version of it if a 25 minute slot works better schedule wise.
+    You are passionate about Open source software . It&#x27;s only normal to convince a friend to try GNOME on top of a Gnu/Linux distribution. Few days later, your friend change their mind stating it wasn&#x27;t something &quot;usable&quot;<br>Why? the answer might surprise you! It wasn&#x27;t something accessible.<br><br>In this quick talk, Azzen highlights the importance of accessibility and guides you through the setup of your desktop using the gnome ecosystem so that everyone could enjoy their freedom and give back to  the open source community
     </p>
 
 
@@ -918,7 +1642,7 @@ Notes: This is a talk that Richard Hughes is going to present at Flock and me at
       <tbody>
         <tr>
           <th>Author:</th>
-          <td>Kalev Lember &lt;kalevlember@gmail.com&gt;</td>
+          <td>Azzen Abidi &lt;azzen.abidi@gmail.com&gt;</td>
         <tr>
       <tr>
         <th>Co-presenters:</th>
@@ -928,13 +1652,13 @@ Notes: This is a talk that Richard Hughes is going to present at Flock and me at
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Long (45 min)</td>
+        <td>25 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+              rejected
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
@@ -951,11 +1675,9 @@ Notes: This is a talk that Richard Hughes is going to present at Flock and me at
 
   </div>
   <div class="paper">
-    <h3>Modular UIs for Offline Content</h3>
+    <h3>GNOME Build Strategies and BuildStream</h3>
     <p class="summary">
-    Endless devices include a lot of content downloaded from the internet so people without internet connections can have access to it. We create lots of apps to organize and present the content.
-
-We are creating a &quot;modular&quot; system for putting together apps quickly, and it&#x27;s built on GTK. (Think one level higher than GTK widgets.) I&#x27;ll talk about what such a system should and shouldn&#x27;t do, and about pushing some of GTK&#x27;s limits.
+    In this talk, I will start by outlining our motivations behind creating this new meta build system, based both on the emergence of new distribution models and also lessons learned from existing meta build system implementations.<br><br>Then we will briefly explore the abstract and rather simple design of BuildStream: A format and engine for the modeling and processing of pipelines composed of elements which perform mutations on filesystem data from inside an isolated sandbox environment.<br><br>Finally we will explore the various use cases of building GNOME modules and outline how we intend to apply this new technology to improve the GNOME Developer experience in various ways.
     </p>
 
 
@@ -963,7 +1685,7 @@ We are creating a &quot;modular&quot; system for putting together apps quickly, 
       <tbody>
         <tr>
           <th>Author:</th>
-          <td>Philip Chimento &lt;philip@endlessm.com&gt;</td>
+          <td>Tristan Van Berkom &lt;tristan.van.berkom@gmail.com&gt;</td>
         <tr>
       <tr>
         <th>Co-presenters:</th>
@@ -973,13 +1695,13 @@ We are creating a &quot;modular&quot; system for putting together apps quickly, 
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Short (25 min)</td>
+        <td>40 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+          accepted
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
@@ -996,21 +1718,9 @@ We are creating a &quot;modular&quot; system for putting together apps quickly, 
 
   </div>
   <div class="paper">
-    <h3>ZeMarmot — Open Animation film produced with FOSS</h3>
+    <h3>Opportunities for GNOME in evolving FOSS ecosystem</h3>
     <p class="summary">
-    &quot;ZeMarmot&quot; is a project of 2D animation movie, to be released under CC By-SA/Free Art licenses and fully made with creative Free Software. In particular, it is currently fully digitally drawn on GIMP, video-edited in Blender and sound-edited with Ardour.
-Our desktop of choice is GNOME, under a GNU/Linux operating system.
-
-We will present the film project and its status, what happened in the last year since we started the project, but also how we contribute back, since Jehan, scenarist of ZeMarmot, has also been an active contributor of GIMP and other Free Software for several years.
-
-Finally we would like to raise the question: is GNOME ready for the creative artists? We may not have the full answer, but a part of it!
-
-----
-
-ZeMarmot&#x27;s director, Aryeom Han, is a young South Korean director of animation film, whose first co-directed short animation got screened in several festivals and won 2 prices, and later worked on corporate videos and several projects. Together with Jehan, they also won a &quot;Firefox Flicks&quot; price in 2012, in &quot;New Technology&quot; category, for an animation augmented through HTML5.
-
-About ZeMarmot: http://film.zemarmot.net/
-Blog: http://girinstud.io/
+    This talk will provide a subjective view of some political, practical and commercial factors contributing to increased adoption of FOSS in general, and some GNOME community projects in particular.<br><br>We highlight some practical factors and opportunities for wider adoption of GNOME software, how Codethink benefits from GNOME and why we think it&#x27;s worth continuing to contribute.<br><br>Codethink is a specialist consultancy and software engineering services firm focusing primarily on system-level FOSS and Linux-based projects.  Several Codethink team members are long-standing GNOME contributors, and Codethink has sponsored many GNOME events and activities over the years. <br><br>Paul Sherwood has been Codethink&#x27;s CEO since 2010, and is an occasional contributor and cheerleader for several FOSS projects.
     </p>
 
 
@@ -1018,27 +1728,116 @@ Blog: http://girinstud.io/
       <tbody>
         <tr>
           <th>Author:</th>
-          <td>Jehan Pagès &lt;jehan@girinstud.io&gt;</td>
+          <td>Paul Sherwood &lt;paul.sherwood@codethink.co.uk&gt;</td>
         <tr>
       <tr>
         <th>Co-presenters:</th>
         <td>
-              Aryeom Han
+              none
         </td>
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Long (45 min)</td>
+        <td>25 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+              rejected
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
         <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="44">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Seamless integration to hack desktop applications</h3>
+    <p class="summary">
+    In the last months Endless achieved another milestone to allow their users to transition to learners. A new feature has been developed that let&#x27;s the user peek at the code that runs an application, modify it and run the new version of that application. A very challenging series of steps has been simplified: the app source will be located and downloaded automatically, then displayed in GNOME Builder and from there it can be explored, modified and run.<br><br>The Feature spawns across three core GNOME technologies: the EOS Shell (derivative of the GNOME Shell), Flatpak and GNOME Builder.<br><br>The authors aim is that this talk is suitable for a broad audience, hoping to find the right balance between demonstrating the user interaction, talking about design decisions and giving an technical overview of the components involved.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Simon Schampijer &lt;simon.schampijer@endlessm.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+          accepted
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="45">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Fantastic Layouts And Where To Find Them</h3>
+    <p class="summary">
+    Emeus is a constraint-based layout manager and container widget for GTK+.<br><br>Emeus allows programmers and designers to describe the UI in a way that can be more natural from the UI building perspective, more expressive and efficient than stacking boxes inside boxes.<br><br>At Endless we have been developing Emeus to provide richer visual experiences in our apps and better tools for engineers and designers to work together.<br><br>Here&#x27;s what you&#x27;ll see in this talk:<br><br>* A new way of creating rich layouts for your GTK+ app.<br>* A display of layouts and widgets that we created at Endless.<br>* How it brings programmers and designers together.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Martin Abente Lahaye &lt;martin@endlessm.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+          accepted
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+              UI, 
+              layouts, 
+              design, 
           <form action="/papers/tag" method="post" style="display: inline">
             <input type="hidden" name="paper" value="46">
             <input type="text" name="tag">
@@ -1051,15 +1850,355 @@ Blog: http://girinstud.io/
 
   </div>
   <div class="paper">
-    <h3>Making your GNOME app compile 2.4x faster</h3>
+    <h3>The new Endless OS desktop: an updated GNOME Shell</h3>
     <p class="summary">
-    ... with the Meson build system on Linux, and ~15x faster on Windows.
+    Endless OS is a Linux-based operating system that aims to provide a modern, easy-to-use and intuitive desktop environment so that computers can be made accessible to everyone in the world, even for people with no previous experience with computers.<br><br>Based in GNOME, Endless OS has been regularly updated so far to include modern version of most components from the GNOME Platform, as well as other core components such as systemd, PulseAudio, OSTree or Flatpak. Unfortunately, the arguably most visible and most heavily modified component of them all, the desktop environment, has been based in GNOME Shell 3.8 for more than 4 years... until now.<br><br>During this talk, I&#x27;ll introduce the new shell in Endless OS, walk through the different challenges we faced and the lessons we learned from performing this monumental update on top of GNOME Shell 3.22, and comment on our plans for the future.
+    </p>
 
-Last year, Jussi Pakkanen (the maintainer of Meson) gave a talk about improving the way GNOME apps are built by replacing Autotools with the Meson build system.
 
-This year, I&#x27;ll be talking about how we at Centricular worked along exactly those lines and ported GStreamer, GLib, and its core dependencies from Autotools to Meson. Besides the improvements in speed, using Meson provided numerous advantages over Autotools such as cleaner syntax, better cross-platform support, maintainable code, and much more.
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Mario Sanchez Prada &lt;mariospr@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="47">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
 
-I will be talking about our porting journey and make the case that Meson is indeed ready for replacing Autotools in every case we&#x27;ve seen so far. The next step is convincing more projects to try out Meson.
+  </div>
+  <div class="paper">
+    <h3>Limited connectivity, Endless apps!</h3>
+    <p class="summary">
+    The Endless OS has always been a bit different from regular Linux distros in that it offers an immutable system managed by OSTree and thus has always had an alternative way of installing applications.<br>It is also one of the first operating systems using Flatpak as the main way of managing applications by the user.<br><br>In this talk I will introduce the evolution of the application story in the Endless OS, focusing on the adoption of Flatpak applications and the changes to GNOME Software to integrate it better with the EOS desktop and to improve the UX for Endless’ users.<br><br>I will also talk about the problems of shipping apps in a world of very unreliable or nonexistent internet connection and the solutions we implemented to give the best experiences to our users. This talk should be interesting not only for those who want to know more about application management in EOS but also for those who want to know more about how GNOME Software works and the and possibilities it offers with its plugins system.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Joaquim Rocha &lt;joaquimrocha1@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+          accepted
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="48">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>How to get better mileage out of Glade</h3>
+    <p class="summary">
+    In this talk we will go trough most of the not so known features of Glade and introduce a refreshed UI which will improve the regular design workflow by replacing the good old tool palette.<br><br>The walk trough will include:<br> - creating custom composite widgets<br> - a catalog to add support for them<br> - JavaScript objects in Glade<br><br>As a bonus, I might, just might, show my crazy idea to rewrite Glade from scratch for Gtk4, just so that we can discuss it over some beers!
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Juan Pablo Ugarte &lt;juanpablougarte@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+          accepted
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="49">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Fleet Commander: Massive desktop configuration</h3>
+    <p class="summary">
+    Explaination of Fleet Commander.<br><br>I gave the same talk at DevConf 2017, but for GUADE C dates, Fleet Commander will be released with FreeIPA integration, a lot of significant enhancements and hopefully, with the Fleet Commander Client by default in Fedora 26, so sysadmins can use it as massive configuration and profile deployment system in desktop environments.<br><br>For more information, the talk and the slides I used at devconf are here:<br><br>TALK: https://www.youtube.com/watch?v&#x3D;rNbJdjigmEo&amp;t&#x3D;2s<br><br>SLIDES: https://github.com/olivergs/slides/tree/master/201701-devconf.cz-fleet-commander
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Oliver Gutierrez &lt;ogutierr@redhat.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="50">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Introducing GNOME Usage</h3>
+    <p class="summary">
+    A short introduction to the new Usage app driving through its current features and roadmap.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Felipe Borges &lt;felipe10borges@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+              gnome-apps, 
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="51">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Podcasting on GNOME</h3>
+    <p class="summary">
+    Check for the first time our new Podcast app. Bootstrapped by GNOME Builder, Flatpak, and friends.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Felipe Borges &lt;felipe10borges@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+              gnome-apps, 
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="52">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Newcomer Genesis Evolution</h3>
+    <p class="summary">
+    The newcomer guide is made for newcomers to get started with GNOME development. Bastian Ilso and Carlos Soriano will tell the story of how the newcomer experience changed in the past year and how that had a big impact on newcomer contributions, developer workflow and the image of the GNOME community.<br>At the end of the talk we will have an open debate about what the next steps should be to improve the experience. What do you think newcomers are looking for? What should the ideal workflow be?
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Carlos Soriano &lt;carlos.soriano89@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+          accepted
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="53">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Art and Linux, An artist&#x27;s experiences with FOSS</h3>
+    <p class="summary">
+    Using example works from presenter&#x27;s own artistic practice, this talk will discuss what currently works well in creative pursuits using FOSS and where the bottlenecks are. <br><br>Rather than just focusing on the state of creative software, the talk aims to take a wider look various tools that is involved in different stages of an artist&#x27;s work from collection and organization of raw material to experimenting, creation and to publishing of art, considering all aspects of the workflow.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Eylul Dogruel &lt;eyluldogruel@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="54">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Building your GNOME app anywhere with Meson</h3>
+    <p class="summary">
+    With the new contribution workflow enabled by GNOME Builder, it is now trivially easy for newcomers to clone a project, build it, and hack on it.<br><br>This talk is about how you can use Meson&#x27;s subprojects and wrapdb to have a very similar experience on any operating system with just Meson and git.<br><br>At the same time, this feature is also distro-friendly since all this machinery can be turned off with a single option, telling Meson to only use dependencies provided by the system.
     </p>
 
 
@@ -1077,21 +2216,19 @@ I will be talking about our porting journey and make the case that Meson is inde
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Short (25 min)</td>
+        <td>25 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+          accepted
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
         <td>
-              autotools, 
-              meson, speed, build systems, cross-platform, gstreamer, glib, 
           <form action="/papers/tag" method="post" style="display: inline">
-            <input type="hidden" name="paper" value="48">
+            <input type="hidden" name="paper" value="55">
             <input type="text" name="tag">
             <input type="submit" value="Add Tag">
           </form>
@@ -1102,16 +2239,9 @@ I will be talking about our porting journey and make the case that Meson is inde
 
   </div>
   <div class="paper">
-    <h3>Reworking the desktop distribution</h3>
+    <h3>From OS to Business - How GNOME Changed my Life</h3>
     <p class="summary">
-    The traditional model of a GNOME desktop is tightly tied to the traditional model of a Linux distribution: many packages that are individually installed onto the users system; some are low-level system services, some are core desktop components, and some are applications. While in some ways very
-flexible, this model is also fragile: the continuing correct operation of the system depends on a complex dance of installation and upgrades of thousands
-of packages. Systems based on free software components, from OLPC, to ChromeOS, to Android have moved away from this model, but are no longer recognizable as a Linux distribution.
-
-Upcoming releases of Fedora Workstation will offer an alternate installation method where the operating system is distributed as an ostree image and atomically upgraded as a whole, while applications are installed on top as xdg-app bundles. The intent is to provide an experience that is much more
-robust than the traditional package-based installation, while providing additional flexibility in installing applications. Applications will no
-longer be strictly bound to the Fedora package set, making it easy for third parties to provide applications that work across multiple distributions and distribution versions. The talk will go over the underlying technologies and discuss how they interact with a traditional distribution ecosystem, and with
-the evolving ecosystem of xdg-app. There will also be discussion of how users, such as developers, need to work differently on such a system, and how we can best enable that.
+    Everything began with a Google Summer of Code at GNOME. What got started here ended up being a huge roller coaster ride across open source projects, freelancing and eventually getting (pre-seed-)funding for my own startup.<br><br>This talk tells my story.<br><br>Participants will learn how they can grow an open development project, automate newcomer processes and gain insights into how they can start making a living of it, possibly founding a company eventually. There is no single recipe but we can - and should - exchange the tips and tricks we’ve gained with our ventures. This talk is for entrepreneurs, wanna-be-freelancers and future or open source project founders.<br><br>Key Takeaways:<br><br>- Don’t be afraid to live your dream: entrepreneurship becomes more and more accessible and is a good alternative to being employed in big companies.<br>- Open Source projects can give you a headstart into professional software development.<br>- Having fun is recommended over high paychecks.
     </p>
 
 
@@ -1119,7 +2249,7 @@ the evolving ecosystem of xdg-app. There will also be discussion of how users, s
       <tbody>
         <tr>
           <th>Author:</th>
-          <td>Owen Taylor &lt;otaylor@redhat.com&gt;</td>
+          <td>sils &lt;lasse.schuirmann@gmail.com&gt;</td>
         <tr>
       <tr>
         <th>Co-presenters:</th>
@@ -1129,19 +2259,23 @@ the evolving ecosystem of xdg-app. There will also be discussion of how users, s
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Long (45 min)</td>
+        <td>25 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+              rejected
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
         <td>
+              GNOME, 
+              GSoC, 
+              coala, 
+              Entrepreneurship, 
           <form action="/papers/tag" method="post" style="display: inline">
-            <input type="hidden" name="paper" value="50">
+            <input type="hidden" name="paper" value="56">
             <input type="text" name="tag">
             <input type="submit" value="Add Tag">
           </form>
@@ -1152,9 +2286,9 @@ the evolving ecosystem of xdg-app. There will also be discussion of how users, s
 
   </div>
   <div class="paper">
-    <h3>A Look Behind the Curtain—how the Foundation runs</h3>
+    <h3>Bringing GNOME home to Ubuntu.</h3>
     <p class="summary">
-    Have you ever wondered what the GNOME Foundation actually does? What do the employees do to keep the Foundation running? I will cover the details on what is required to keep the Foundation active and solvent.  Come see the challenges we face and maybe even see what you can do to help!
+    I am a co-founder and technical lead of Ubuntu GNOME, with our goal to bring a pure GNOME experience to Ubuntu some might wonder where that might be heading given the recently annouced decision for Canonical to drop Unity and switch to GNOME. This will bring a new set of challenges for the Ubuntu GNOME team, while our distro will not likely exist as a seperate entity and we will merge development resources with the Canonical desktop team, we will remain as a community team to avoid the possible distinction between community and Canonical may getting blurred.<br><br>I will open my talk with a brief history of the Ubuntu GNOME project, why we started it and what our goals were. We started the project with goal of bring pure gnome-shell to Ubuntu. At the time GNOME 3 was incredibly broken on both Ubuntu and Debian to the the point of being unusable. We managed to get things into really good shape over the years but there have been challenges, mostly relating to the co-existence with Unity, and having to maintain large patch delta’s to work with Unity also.<br><br>Then comes the exciting stuff what is the future of GNOME on Ubuntu, where does the Ubuntu GNOME team stand in the future? Canonical are already showing some resistance towards core components of the GNOME stack, for example things like tracker and gdm. What part will Ubuntu GNOME play in pushing our visions into the core Ubuntu Future GNOME desktop? I can’t be incredibly specific on this at this point we are still in discussions with Canonical teams at this stage, but all should be clear by GUADEC. This should fill the bulk of my talk, I see exciting oppurtunities ahead and some more challenges going forward before we can get Canonical aligned with GNOME. I will discuss these in detail during my talk.
     </p>
 
 
@@ -1162,7 +2296,7 @@ the evolving ecosystem of xdg-app. There will also be discussion of how users, s
       <tbody>
         <tr>
           <th>Author:</th>
-          <td>Rosanna Yuen &lt;zana@gnome.org&gt;</td>
+          <td>Tim Lunn &lt;darkxst@gmail.com&gt;</td>
         <tr>
       <tr>
         <th>Co-presenters:</th>
@@ -1172,19 +2306,19 @@ the evolving ecosystem of xdg-app. There will also be discussion of how users, s
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Short (25 min)</td>
+        <td>25 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+              rejected
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
         <td>
           <form action="/papers/tag" method="post" style="display: inline">
-            <input type="hidden" name="paper" value="51">
+            <input type="hidden" name="paper" value="57">
             <input type="text" name="tag">
             <input type="submit" value="Add Tag">
           </form>
@@ -1195,11 +2329,310 @@ the evolving ecosystem of xdg-app. There will also be discussion of how users, s
 
   </div>
   <div class="paper">
-    <h3>An Asynchronous Internet for GNOME</h3>
+    <h3>GNOME and state of software</h3>
     <p class="summary">
-    While most of the developed world has decent internet access, this is not universally distributed. In much of the developing world, people have very incomplete and spotty access to the internet.
+    This talk ask some &amp; try to answer some questions regarding state of (and) challenges with shipping software asking questions/touching tough things such what an OS is/what it means today.<br><br>Viewing GNOME as a potential product. <br><br>An intention with the talk is to challenge the audience, raise questions (and) potentially open some perspective(s).
+    </p>
 
-At Endless, we are shipping GNOME into that environment. We&#x27;ve had a number of challenges in modifying the desktop to work within these constraints. The end result is a version of GNOME that is useful and relevant both with and without a network enabled.
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Oliver Propst &lt;oliver.propst@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="58">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Security</h3>
+    <p class="summary">
+    I will step through the basics of security:<br><br>- Access handling<br>- Reset planning<br>- Recovery planning<br>- Data valuation<br><br>And on to the intermediate:<br>- Data driven inventory<br>- Data flow valuation<br>- Methods to reduce security impacts<br><br>Then towards the mentally useful<br>- Threat modelling<br>- Common threat models on the desktop<br><br>And towards the conclusion<br>- What Gnome does today<br>- What is missing today<br>- Suggestions of where to go from here<br><br><br>Length adaptible, depending on how much content is cut, I&#x27;d start with cutting the Threat Modelling, while it&#x27;s important for the conclusion, it&#x27;s a part I&#x27;d expect people to have a good grasp of. <br><br><br>The talk will go through an semi-imaginary project and it&#x27;s setup, as well as listing some features that lower the impact of attack and disaster.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>D. Spindel Ljungmark &lt;spider@skuggor.se&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="59">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Conversation on GNOME&#x27;s future in a webapp world</h3>
+    <p class="summary">
+    The pendulum has one swung and the market no longer thinks that native apps are as important as apps now have become store front to big data in the cloud.  Desktops are seemingly not as important as they were in the 90s.  This is a conversation on defining our future, and positioning ourselves to be successful desktop in a world where people now use apps on their phone and tablets.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Sriram (sri) Ramkrishna &lt;sriram.ramkrishna@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="61">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Delivering content: a new app development model</h3>
+    <p class="summary">
+    At Endless we built a software development platform with the goal of making it as easy as possible to deliver content to offline users through native Linux applications, writing little or no code.<br><br>During this talk, I will present the Endless SDK and describe the end-to-end development workflow used to build applications, touching on content, UI, integration and deployment.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Cosimo Cecchi &lt;cosimo.cecchi@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="62">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>What System76 Wants From GNOME</h3>
+    <p class="summary">
+    Being a new member of the GNOME community, and a business that will be shipping GNOME to customers all over the world. Ryan shares what they&#x27;ve learned from their customers about what they want from their desktop.<br><br>Ryan also shares what the future of System76 looks like and how GNOME plays a part in that future.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Ryan Sipes &lt;ryan@system76.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+          accepted
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="63">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Using python and microservices to fuel WebPush</h3>
+    <p class="summary">
+    - What is WebPush?<br><br>- How WebPush works and the roles played by the various players (service workers, push servers and browsers) involved?<br><br>- The idea behind the webpush service, WebPush Channels and why it was needed?<br><br>- Technology used to develop the service<br><br>- How to use WebPush Channels in your web app for push notifications?<br><br>- Summary
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Mansimar Kaur &lt;mansimarkaur.mks@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="64">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Atomic Workstation</h3>
+    <p class="summary">
+    Linux distributions have been traditionally put together from individual packages. In case of Fedora it&#x27;s RPM packages. They have served us well, but they also have a number of shortcomings: with small individual components the testing matrix explodes when we have to consider different package versions, and upgrading such systems is often irreversable.<br><br>In this talk I will lay out a plan how we are going to put together an atomic base system in Fedora Workstation with flatpaks for individual applications. I will demo the latest progress we&#x27;ve made and show a great many screenshots.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Kalev Lember &lt;kalevlember@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+          accepted
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="65">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>The History of GNOME</h3>
+    <p class="summary">
+    Happy Birthday GNOME! Ever wonder why the project is the way it is? The GNOME project has had a long and exciting ride to this point. I&#x27;ll go through some of the early moments of the project that led us to the desktop that we know and love today. <br><br>[Note to paper committee. I&#x27;m more than happy to join this with other 20th birthday events. Open to suggestions]
     </p>
 
 
@@ -1217,19 +2650,19 @@ At Endless, we are shipping GNOME into that environment. We&#x27;ve had a number
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Long (45 min)</td>
+        <td>40 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+          accepted
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
         <td>
           <form action="/papers/tag" method="post" style="display: inline">
-            <input type="hidden" name="paper" value="52">
+            <input type="hidden" name="paper" value="66">
             <input type="text" name="tag">
             <input type="submit" value="Add Tag">
           </form>
@@ -1240,9 +2673,9 @@ At Endless, we are shipping GNOME into that environment. We&#x27;ve had a number
 
   </div>
   <div class="paper">
-    <h3>Building GTK+ applications for Windows with MinGW</h3>
+    <h3>Frida: custom developer tooling on steroids</h3>
     <p class="summary">
-    While there have been great strides in building the GTK+ stack on Windows, cross-building for Windows from Linux is still the easiest way for most developers to build their applications. I will demonstrate, using the Fedora MinGW project, how to build a GTK+ application, including a simple installer to bundle all the dependencies into a single distributable file.
+    As developers we often find ourselves adding logging code to help track<br>down bugs. In some cases, as complexity grows, we may even end up<br>creating a comprehensive tracing subsystem. All of this just for one<br>library or application.<br><br>In this talk I will introduce a new approach to developer tooling, by<br>leveraging Frida (https://www.frida.re), a dynamic instrumentation<br>toolkit powered by GNOME tech.<br><br>Instead of building logging and tracing into the software, I will show<br>how such tools can be built standalone, and even modified live, without<br>restarting the target application/software.
     </p>
 
 
@@ -1250,7 +2683,7 @@ At Endless, we are shipping GNOME into that environment. We&#x27;ve had a number
       <tbody>
         <tr>
           <th>Author:</th>
-          <td>David King &lt;amigadave@fedoraproject.org&gt;</td>
+          <td>Ole André Vadla Ravnås &lt;oleavr@gmail.com&gt;</td>
         <tr>
       <tr>
         <th>Co-presenters:</th>
@@ -1260,19 +2693,19 @@ At Endless, we are shipping GNOME into that environment. We&#x27;ve had a number
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Short (25 min)</td>
+        <td>40 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+              rejected
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
         <td>
           <form action="/papers/tag" method="post" style="display: inline">
-            <input type="hidden" name="paper" value="55">
+            <input type="hidden" name="paper" value="67">
             <input type="text" name="tag">
             <input type="submit" value="Add Tag">
           </form>
@@ -1283,9 +2716,9 @@ At Endless, we are shipping GNOME into that environment. We&#x27;ve had a number
 
   </div>
   <div class="paper">
-    <h3>Documentation: state of the union</h3>
+    <h3>Tracker - present and future</h3>
     <p class="summary">
-    A quick overview of what&#x27;s been happening in the last few years. Hear about where the different docs projects are heading, all the things that have been happening with the team and the most epic of hackfests where the team worked on all the  docs.
+    Tracker has become a foundation for many core apps. It has provided a common metadata store for applications to share, making all of the data a giant interconnected graph.<br><br>However, times change. There&#x27;s now initiatives like flatpak that make this interconnected graph more accessory, or even not desirable. This talk will cover the plans to make Tracker a good citizen in the sandboxing world, and what this means for applications.
     </p>
 
 
@@ -1293,7 +2726,7 @@ At Endless, we are shipping GNOME into that environment. We&#x27;ve had a number
       <tbody>
         <tr>
           <th>Author:</th>
-          <td>Kat &lt;kat@gnome.org&gt;</td>
+          <td>Carlos Garnacho &lt;mrgarnacho@gmail.com&gt;</td>
         <tr>
       <tr>
         <th>Co-presenters:</th>
@@ -1303,19 +2736,19 @@ At Endless, we are shipping GNOME into that environment. We&#x27;ve had a number
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Short (25 min)</td>
+        <td>40 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+          accepted
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
         <td>
           <form action="/papers/tag" method="post" style="display: inline">
-            <input type="hidden" name="paper" value="56">
+            <input type="hidden" name="paper" value="68">
             <input type="text" name="tag">
             <input type="submit" value="Add Tag">
           </form>
@@ -1326,11 +2759,9 @@ At Endless, we are shipping GNOME into that environment. We&#x27;ve had a number
 
   </div>
   <div class="paper">
-    <h3>Building an automotive platform from GNOME</h3>
+    <h3>Mutter/gnome-shell state of the union</h3>
     <p class="summary">
-    With the success of connected cars, there is an increasing demand for a secure, consumer-oriented infotainment platform. The open source application framework &quot;Apertis&quot; serves as embedded end-to-end solution in the automotive environment. With many contributions to the GNOME technologies over the years and its own Free software components, Apertis is truly a unique product in the automotive world which pushes the boundaries of a traditionally closed source environment.
-
-Security is guaranteed by multiple lines of defense, including MAC (Mandatory Access Control) and xdg-app as sandboxing mechanism. D-Bus provides a stable SDK-API to the app-developer.
+    Shell present and near future.
     </p>
 
 
@@ -1338,7 +2769,50 @@ Security is guaranteed by multiple lines of defense, including MAC (Mandatory Ac
       <tbody>
         <tr>
           <th>Author:</th>
-          <td>Lukas Nack &lt;lukasnack@googlemail.com&gt;</td>
+          <td>Carlos Garnacho &lt;mrgarnacho@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              Florian Müllner
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+          accepted
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="69">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Ding dong, GdkWindow is dead</h3>
+    <p class="summary">
+    GTK+4 is getting more generic and simple, and less X11-centric. This talk will cover what this means for GtkWidget development, and the main differences with GTK+3.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Carlos Garnacho &lt;mrgarnacho@gmail.com&gt;</td>
         <tr>
       <tr>
         <th>Co-presenters:</th>
@@ -1348,19 +2822,364 @@ Security is guaranteed by multiple lines of defense, including MAC (Mandatory Ac
       </tr>
       <tr>
         <th>Talk length:</th>
-        <td>Long (45 min)</td>
+        <td>25 minutes</td>
       </tr>
       <tr>
         <th>Status:</th>
         <td>
-      accepted, attendance confirmed
-</td>
+          accepted
+        </td>
       </tr>
       <tr>
         <th>Tags:</th>
         <td>
           <form action="/papers/tag" method="post" style="display: inline">
-            <input type="hidden" name="paper" value="57">
+            <input type="hidden" name="paper" value="70">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>LibreOffice and GNOME</h3>
+    <p class="summary">
+    Come and hear about the latest developments in LibreOffice and see how we continue to make the Linux Desktop and Free Software ever more useful for business users.<br><br>Get an update on the awesome work from Caolan polishing our gtk3 and wayland support. Checkout the latest new features in the LibreOfficeKit API - ripe for deeper use in GNOME Documents - and the potential for testing out innovative new GNOME editors here. See LibreOffice Online - inspired by gtk+/broadway - and what it can do<br>for you.<br><br>Also catch random thoughts and demos on whatever seems apposite.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Michael Meeks &lt;mejmeeks@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="71">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>(Small) steps towards improving Desktop security …</h3>
+    <p class="summary">
+    For a couple of years now we try to deliver a system that defends the average user from everyday threats.   We ought to add as much security as possible without compromising on features or usability.<br><br>This talk shows how to attain the next level of defending users from attacks.  First, it will be shown what simple compiler options such as ASan or UBSan can do for us to improve security and how to make use of their output.  Then, it will be shown how using static analysis helps to deliver software which is more resilient to attacks.   But also more involved approaches such as fuzzing help us to create software that is harder to exploit. It will be shown how to work with afl for finding crashes in parsers.  Finally, an assortment of practical ideas to protect the user will be presented.<br><br>After having attended the talk, you will hopefully have an idea of what to do in order to further protect the users of your module from attacks. Also, you will get inspiration for what to hack on next to make the world a safer place.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Tobias Mueller &lt;muelli@cryptobitch.de&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="72">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>(rpm-)ostree + GNOME &#x3D; ♥</h3>
+    <p class="summary">
+    The Fedora Atomic Workstation, which is an ostree variant of the traditional Fedora Workstation - a popular consumer of GNOME, has seen a lot of activity recently.<br><br>Learn about the new developments, including support for upgrades and rollbacks in GNOME Software, infrastructure for building flatpaks alongside RPMs, how a tree is composed of existing Fedora packages and much more, including how to test it for yourself!
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>David King &lt;amigadave@amigadave.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="73">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Building a secure desktop with GNOME technologies</h3>
+    <p class="summary">
+    The move towards Wayland and container-isolated application deployment brings a range of security benefits. But broad isolation isn&#x27;t enough - we still need fine-grained control over access to resources, otherwise it&#x27;s still practical for a single compromised application to leak significant quantities of personal data.<br><br>This presentation will examine existing application isolation mechanisms and identify cases where they fall short. It will then go on to cover existing kernel technologies that allow us to provide even stronger restrictions and control, and how it&#x27;s possible for us to build environments that provide high levels of security without forcing users to give up the freedom to run whatever software they want.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Matthew Garrett &lt;matthewgarrett@google.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>40 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+          accepted
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="74">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>Building your open source portfolio while at work</h3>
+    <p class="summary">
+    There are innumerous programming languages out there and generally, multiple languages are used at most of the companies. How do you learn a new programming language for use at work or just for fun? How do you make sure you learn good practices of that new language?<br><br>This talk will cover an unconventional way of learning a new programming language at work - contributing to open source software.<br><br>By the end of this talk, you will know:<br><br> - How to learn a new programming language by contributing to open source projects.<br> - How to build your open source portfolio alongside your office work.<br> - Other personal benefits of contributing to open source projects.<br> - How to find beginner-friendly open source projects for your area of interest.<br><br>Whether you’re new in the tech industry or a veteran, you will find this new perspective interesting.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Sahil Dua &lt;sahildua2305@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+              open-source, 
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="75">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>GNOME Continuous Integration For Apps</h3>
+    <p class="summary">
+    The Idea is to show our progress with the initiative [1] and show to GNOME Developers how to add a Jenkinsfile and tests for their projects.<br><br>Kind Regards.<br><br>[1] https://wiki.gnome.org/Initiatives/ContinuousIntegrationForApps
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Walter Vargas &lt;waltervargas@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+          accepted
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="76">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>The evolution of the GNOME ecosystem</h3>
+    <p class="summary">
+    Release management in large-scale software development projects requires significant communication and coordination.<br>It is particularly challenging in Free and Open Source Software (FOSS) ecosystems like GNOME, in which hundreds of loosely connected developers and their projects are coordinated to release software to a schedule.<br>To better understand this process and its challenges, we empirically studied the communication and coordination activities in the GNOME ecosystem over time, and studied developers&#x27; interactions.<br>Through a case study, we cataloged communication channels, we categorized high level communication and coordination activities spanning multiple releases, and triangulated our results by interviewing ten key developers.<br>We report a set of lessons learned that encapsulates our understanding of how the Release Management process function in a FOSS ecosystem, and how it has evolved over time.<br>The result of the empirical research will be explained through the lense of four theories applied to the GNOME ecosystem: the media richness theory, the channel expansion theory, the shared understanding theory, and collaboration through open superposition theory.<br><br><br>This presentation will provide an overview of the evolution of GNOME ecosystem, using the release management as the driving activity to coordinate hundreds of loosely connected developers and their projects, and how it had evolved over time.<br>The presentation will include a comparison with other FOSS ecosystems, the similarities and differences with respect to GNOME as they mature, what they have learned from GNOME, and what GNOME can learn from them.
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Germán Poo-Caamaño &lt;gpoo@calcifer.org&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+              rejected
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="77">
+            <input type="text" name="tag">
+            <input type="submit" value="Add Tag">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <div class="paper">
+    <h3>The GNOME Way</h3>
+    <p class="summary">
+    This year, GNOME turns 20. Over the course of its history, the project has pioneered new ways of working and has set out a powerful mission for itself: from championing usability and accessibility, to establishing the six month release cycle, GNOME has been at the forefront of Free Software development. However, there are also risks for a project that has been running this long: collective knowledge can be forgotten, and it is easy to lose touch with the beliefs that give a project purpose.<br><br>In this talk, I&#x27;ll ask the question: what is it that defines the GNOME project? In attempting to provide my own answer, I&#x27;ll describe the principles that I think make GNOME so important. I&#x27;ll also recount stories from GNOME&#x27;s history, and in so doing make a case for what constitutes the project&#x27;s folklore. Finally, I&#x27;ll ask the question: how do we ensure that, as GNOME looks to the future, the project continues to nurture these traditions?
+    </p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Author:</th>
+          <td>Allan Day &lt;allanpday@gmail.com&gt;</td>
+        <tr>
+      <tr>
+        <th>Co-presenters:</th>
+        <td>
+              none
+        </td>
+      </tr>
+      <tr>
+        <th>Talk length:</th>
+        <td>25 minutes</td>
+      </tr>
+      <tr>
+        <th>Status:</th>
+        <td>
+          accepted
+        </td>
+      </tr>
+      <tr>
+        <th>Tags:</th>
+        <td>
+          <form action="/papers/tag" method="post" style="display: inline">
+            <input type="hidden" name="paper" value="78">
             <input type="text" name="tag">
             <input type="submit" value="Add Tag">
           </form>
@@ -1371,57 +3190,63 @@ Security is guaranteed by multiple lines of defense, including MAC (Mandatory Ac
 
   </div>
 
+<p>
+<a href="/">Return</a>
+</p>
 
-                                    <div id="footer_art" class="grid_12 default">
-                            &nbsp;
-            </div>
 
-        </div>
-</div>
-
-    <div class="clearfix"></div>
-    
-        <!-- footer grass -->
-    <div id="footer_grass">
-        &nbsp;
+      </div>
     </div>
+  </section>
 
     <!-- footer -->
     <div id="footer">
-        <div class="container_12">
-            <div class="links grid_9">
-                <div class="menu-footer-container"><ul id="menu-footer" class="menu"><li id="menu-item-1048" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-has-children menu-item-1048"><a href="/">The GNOME Project</a>
-<ul class="sub-menu">
-	<li id="menu-item-1049" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1049"><a href="https://www.gnome.org/about/">About Us</a></li>
-	<li id="menu-item-1050" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1050"><a href="https://www.gnome.org/get-involved/">Get Involved</a></li>
-	<li id="menu-item-1051" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1051"><a href="https://www.gnome.org/teams/">Teams</a></li>
-	<li id="menu-item-1053" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1053"><a href="https://www.gnome.org/support-gnome/">Support GNOME</a></li>
-	<li id="menu-item-1054" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1054"><a href="https://www.gnome.org/contact/">Contact Us</a></li>
-	<li id="menu-item-2246" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2246"><a href="https://www.gnome.org/foundation/">The GNOME Foundation</a></li>
-</ul>
-</li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-has-children"><a href="https://guadec.org">GUADEC: The GNOME Conference</a>
-<ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://guadec.org/code-of-conduct">Code of Conduct</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://guadec.org/sponsors/">Sponsors</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://guadec.org/travel/">Travel Information</a></li>
-</ul>
-</li>
-</ul></div>            </div>
-	    <!-- footnotes -->
-            <div id="footnotes" class="grid_9">
-                <small>
-                    Hosted by <a href="http://www.redhat.com/">Red Hat</a>.
-                    Powered by <a href="https://github.com/puiterwijk/regcfp">regcfp</a>.
-                </small>
-            </div>
+      <div class="container_12">
+        <div class="links grid_12">
+          <div class="menu-footer-container">
 
-            <div class="clear"></div>
+            <ul id="menu-footer-col1" class="menu">
+              <li class="menu-item menu-item-type-post_type menu-item-has-children ">
+                <ul class="sub-menu">
+                  <li class="menu-item"><a href="https://www.gnome.org/"><strong>The GNOME Project</strong></a></li>
+                  <li class="menu-item"><a href="https://www.gnome.org/about/">About Us</a></li>
+                  <li class="menu-item"><a href="https://www.gnome.org/get-involved/">Get Involved</a></li>
+                  <li class="menu-item"><a href="https://www.gnome.org/support-gnome/">Support GNOME</a></li>
+                  <li class="menu-item"><a href="https://www.gnome.org/merchandise/">Merchandise</a></li>
+                  <li class="menu-item"><a href="https://www.gnome.org/contact/">Contact Us</a></li>
+                  <li class="menu-item"><a href="https://www.gnome.org/foundation/">The GNOME Foundation</a></li>
+                </ul>
+              </li>
+            </ul>
+
+            <ul id="menu-footer-col2" class="menu">
+              <li class="menu-item menu-item-type-post_type menu-item-has-children ">
+                <ul class="sub-menu">
+                  <li class="menu-item"><a href="https://2017.guadec.org/"><strong>GUADEC: The GNOME conference</strong></a></li>
+                  <li class="menu-item"><a href="https://2017.guadec.org/category/news/">News</a></li>
+                  <li class="menu-item"><a href="https://2017.guadec.org/travel/">Travel</a></li>
+                  <li class="menu-item"><a href="https://2017.guadec.org/accommodation/">Hotels</a></li>
+                  <li class="menu-item"><a href="https://2017.guadec.org/location/">Venue</a></li>
+                  <li class="menu-item"><a href="https://2017.guadec.org/code-of-conduct/">Code of conduct</a></li>
+                  <li class="menu-item"><a href="https://2017.guadec.org/sponsors/">Sponsors</a></li>
+                </ul>
+              </li>
+            </ul>
+
+          </div>
         </div>
+      </div>
+      <!-- footnotes -->
+      <div id="footnotes" class="container_12">
+        <small>
+          Hosted by <a href="http://www.redhat.com/">Red Hat</a>.
+          Powered by <a href="https://github.com/puiterwijk/regcfp">regcfp</a>.
+        </small>
+      </div>
+
+      <div class="clear"></div>
     </div>
 
 
-    </body>
+  </body>
 </html>
-
-
