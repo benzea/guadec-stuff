@@ -586,21 +586,25 @@ open('schedule.xml', 'bw').write(ET.tostring(schedule, encoding='UTF-8'))
 
 ###
 
-html = ET.Element('div')
-html.attrib['class'] = "schedule"
+table_pagename = '/schedule/'
+abstracts_pagename = '/talks-and-events/'
+
+html_table = ET.Element('div')
+
+html_table.attrib['class'] = "schedule"
 
 
 abstracts = {}
 
 for dayid in range(1, conference['days'] + 1):
-    tmp = ET.SubElement(html, 'h3')
+    tmp = ET.SubElement(html_table, 'h3')
 
     date = datetime.datetime.strptime(conference['start'], '%Y-%m-%d')
     date = date.date() + datetime.timedelta(days=dayid - 1)
 
     tmp.text = date.strftime('%A %d. %B %Y')
 
-    table = ET.SubElement(html, 'table')
+    table = ET.SubElement(html_table, 'table')
     thead = ET.SubElement(table, 'thead')
 
     # Header
@@ -677,7 +681,7 @@ for dayid in range(1, conference['days'] + 1):
                 header = ET.SubElement(div, 'h4')
                 a = ET.SubElement(header, 'a')
                 a.text = abstract_title
-                a.attrib['href'] = '#' + cross_link
+                a.attrib['href'] = '%s#%s' % (table_pagename, cross_link)
 
                 details = ET.SubElement(div, 'span')
                 details.attrib['class'] = 'details'
@@ -712,7 +716,7 @@ for dayid in range(1, conference['days'] + 1):
 
             if 'abstract' in event and event['abstract']:
                 hdrtext = ET.SubElement(header, 'a')
-                hdrtext.attrib['href'] = '#abstract-' + cross_link
+                hdrtext.attrib['href'] = '%s#abstract-%s' % (abstracts_pagename, cross_link)
             else:
                 hdrtext = header
 
@@ -723,18 +727,22 @@ for dayid in range(1, conference['days'] + 1):
                 br.tail = ', '.join(event['persons'])
 
 
-tmp = ET.SubElement(html, 'h3')
+html_abstracts = ET.Element('div')
+tmp = ET.SubElement(html_abstracts, 'h3')
 tmp.text = 'Abstracts'
 
 for title in sorted(abstracts):
-    html.append(abstracts[title])
+    html_abstracts.append(abstracts[title])
 
 
 
 
 
-tree = ET.ElementTree(html)
+tree = ET.ElementTree(html_table)
 tree.write('schedule.html', encoding='UTF-8', xml_declaration=False)
+
+tree = ET.ElementTree(html_abstracts)
+tree.write('talks-and-events.html', encoding='UTF-8', xml_declaration=False)
 
 
 #####
