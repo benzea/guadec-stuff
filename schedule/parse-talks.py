@@ -647,6 +647,7 @@ for dayid in range(1, conference['days'] + 1):
             if room_index < len(td_rooms):
                 # This is a normal conference room
                 td = td_rooms[room_index]
+                td.attrib['class'] = 'talk'
             else:
                 # This is "elsewhere": replace will a cell that fills the whole row
                 colspan = len(td_rooms)
@@ -654,6 +655,7 @@ for dayid in range(1, conference['days'] + 1):
                     tr.remove(td)
                 td = td_rooms[0]
                 td.attrib['colspan'] = str(colspan)
+                td.attrib['class'] = 'break'
 
             cross_link = event['slug']
             abstract_title = event['title']
@@ -702,7 +704,6 @@ for dayid in range(1, conference['days'] + 1):
                     abstracts[abstract_title] = div
 
 
-            td.attrib['class'] = 'talk'
             if not no_anchor:
                 td.attrib['id'] = cross_link
 
