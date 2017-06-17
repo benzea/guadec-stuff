@@ -480,9 +480,9 @@ event_ignored_tags = {'id', 'guid', 'matchby', 'end', 'day', 'placed', 'abstract
 event_ensure_tags = { 'logo', 'description', 'recording', 'track', 'links', 'attachments' }
 
 conference = {
-  'days' : 4,
+  'days' : 3,
   'title' : 'GUADEC 2017',
-  'start' : '2017-07-27',
+  'start' : '2017-07-28',
   'end' : '2017-07-30',
   'acronym' : 'GUADEC2017',
   'timeslot_duration' : '00:15', # What does this mean?
