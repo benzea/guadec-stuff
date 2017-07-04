@@ -581,6 +581,10 @@ for dayid in range(1, conference['days'] + 1):
             event['date'] = start.isoformat()
             event['duration'] = "%02i:%02i" % (dseconds // (60 * 60), dseconds // (60) % 60)
 
+            # Work around https://github.com/Wilm0r/giggity/issues/16
+            event['description'] = event['abstract']
+            del event['abstract']
+
             ev = ET.SubElement(room, 'event')
             ev.attrib['id'] = str(event['id'])
             ev.attrib['guid'] = str(event['guid'])
