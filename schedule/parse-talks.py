@@ -476,7 +476,7 @@ for l in lines:
 schedule = ET.Element('schedule')
 ET.SubElement(schedule, 'version').text = version
 
-event_ignored_tags = {'id', 'guid', 'matchby', 'end', 'day', 'placed', 'abstract_title' }
+event_ignored_tags = {'id', 'guid', 'matchby', 'day', 'placed', 'abstract_title' }
 event_ensure_tags = { 'logo', 'description', 'recording', 'track', 'links', 'attachments' }
 
 conference = {
@@ -484,7 +484,10 @@ conference = {
   'title' : 'GUADEC 2017',
   'start' : '2017-07-28',
   'end' : '2017-07-30',
+  'day_change': '00:00',
   'acronym' : 'GUADEC2017',
+  'city' : 'Manchester, UK',
+  'venue' : 'Manchester Metropolitan University',
   'timeslot_duration' : '00:15', # What does this mean?
 }
 
@@ -511,6 +514,12 @@ def add_elements(et, elements, ignore=set()):
             ET.SubElement(et, key).text = str(val)
 
 add_elements(ET.SubElement(schedule, 'conference'), conference)
+
+person_id_dict = dict()
+def person_id(name):
+    if name not in person_id_dict:
+        person_id_dict[name] = len(person_id_dict) + 1
+    return person_id_dict[name]
 
 for dayid in range(1, conference['days'] + 1):
     day = ET.SubElement(schedule, 'day')
@@ -576,6 +585,10 @@ for dayid in range(1, conference['days'] + 1):
             ev.attrib['id'] = str(event['id'])
             ev.attrib['guid'] = str(event['guid'])
             add_elements(ev, event, event_ignored_tags)
+
+            # Assign IDs to each <person>
+            for event_person in ev.find('persons'):
+                event_person.set('id', str(person_id(event_person.text)))
 
     if day_start:
         day.attrib['start'] = day_start.isoformat()
