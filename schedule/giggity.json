@@ -3,9 +3,9 @@
     "url": "https://static.gnome.org/guadec-2017/schedule.xml",
     "title": "GUADEC 2017",
     "start": "2017-07-28",
-    "end": "2017-07-31",
+    "end": "2017-07-02",
     "metadata": {
-        "icon": "https://raw.githubusercontent.com/gnome-design-team/gnome-marketing/master/logos/gnomelogo-gplus.png",
+        "icon": "https://static.gnome.org/guadec-2017/icon1.png",
         "links": [
             {
                 "url": "https://www.guadec.org/",
