@@ -158,7 +158,13 @@ events.append({
     'track' : None,
     'links' : None,
     'attachments' : None,
-    'abstract' : 'Fast-paced and focused talks on any and all subjects. You will be able to sign up for these on the day! Talks will be accepted on a first come, first serve basis so turn up early if you want to make it on to the schedule. All talks will be subject to a strict time limit of 5 minutes on stage (including setup). Slides are welcome, but not compulsory.',
+    'abstract' :
+        'Fast-paced and focused talks on any and all subjects. All talks will '
+        'be subject to a strict time limit of 5 minutes on stage (including setup). '
+        'Slides are welcome, but not compulsory.<br><br>'
+        'You will be able to sign up for a lightning talk slot from 11.00AM on '
+        'Sunday 29th on a signup sheet at the info desk. Talks will be accepted '
+        'on a first come, first serve basis.',
     'persons' : [],
     'language' : 'eng',
     'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
@@ -166,6 +172,16 @@ events.append({
     'id' : eventid,
 })
 eventid += 1
+
+OPEN_TALKS_DESCRIPTION = (
+    '45 minute slots for talks and discussion panels to be submitted and '
+    'selected by attendees on-site. This is your chance to present cutting '
+    'edge developments or anything that did not make it into the normal '
+    'schedule.<br><br>'
+    'You can propose talks from 11.00, and other attendees will add a '
+    'vote to the ones that they would like to see. At 15.30, the talk '
+    'with the most votes will be selected and scheduled, so keep an eye '
+    'on schedule board!''')
 
 events.append({
     'title' : 'Open talk #1',
@@ -177,11 +193,7 @@ events.append({
     'matchby' : 'Open talk #1',
     # WARNING, delete the below when changing the abstract!
     'abstract_title' : 'Open talk',
-    'abstract' : '''25 minute slots for talks and discussion panels to be submitted and selected by attendees on-site. This is your chance to present cutting edge developments or anything that did not make it into the normal schedule.
- 
-Talks will be selected and posted on the board at 15:30 on Friday and Sunday.
- 
-You can propose talks throughout the day and other attendees will add a vote to the ones that they would like to see. At the last break before the talk slot, the talks with the most votes will be selected and scheduled, so check the schedule board!''',
+    'abstract' : OPEN_TALKS_DESCRIPTION,
     'persons' : ['to be announced'],
     'language' : 'eng',
     'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
@@ -201,11 +213,7 @@ events.append({
     'matchby' : 'Open talk #2',
     # WARNING, delete the below when changing the abstract!
     'abstract_title' : 'Open talk',
-    'abstract' : '''25 minute slots for talks and discussion panels to be submitted and selected by attendees on-site. This is your chance to present cutting edge developments or anything that did not make it into the normal schedule.
- 
-Talks will be selected and posted on the board at 16:00 on Friday and Sunday.
- 
-You can propose talks throughout the day and other attendees will add a vote to the ones that they would like to see. At the last break before the talk slot, the talks with the most votes will be selected and scheduled, so check the schedule board!''',
+    'abstract' : OPEN_TALKS_DESCRIPTION,
     'persons' : ['to be announced'],
     'language' : 'eng',
     'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
@@ -225,11 +233,7 @@ events.append({
     'matchby' : 'Open talk #3',
     # WARNING, delete the below when changing the abstract!
     'abstract_title' : 'Open talk',
-    'abstract' : '''25 minute slots for talks and discussion panels to be submitted and selected by attendees on-site. This is your chance to present cutting edge developments or anything that did not make it into the normal schedule.
- 
-Talks will be selected and posted on the board at 16:00 on Friday and Sunday.
- 
-You can propose talks throughout the day and other attendees will add a vote to the ones that they would like to see. At the last break before the talk slot, the talks with the most votes will be selected and scheduled, so check the schedule board!''',
+    'abstract' : OPEN_TALKS_DESCRIPTION,
     'persons' : ['to be announced'],
     'language' : 'eng',
     'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
@@ -249,11 +253,7 @@ events.append({
     'matchby' : 'Open talk #4',
     # WARNING, delete the below when changing the abstract!
     'abstract_title' : 'Open talk',
-    'abstract' : '''25 minute slots for talks and discussion panels to be submitted and selected by attendees on-site. This is your chance to present cutting edge developments or anything that did not make it into the normal schedule.
- 
-Talks will be selected and posted on the board at 16:00 on Friday and Sunday.
- 
-You can propose talks throughout the day and other attendees will add a vote to the ones that they would like to see. At the last break before the talk slot, the talks with the most votes will be selected and scheduled, so check the schedule board!''',
+    'abstract' : OPEN_TALKS_DESCRIPTION,
     'persons' : ['to be announced'],
     'language' : 'eng',
     'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
@@ -582,6 +582,7 @@ for dayid in range(1, conference['days'] + 1):
             event['duration'] = "%02i:%02i" % (dseconds // (60 * 60), dseconds // (60) % 60)
 
             # Work around https://github.com/Wilm0r/giggity/issues/16
+            event = copy.copy(event)
             event['description'] = event['abstract']
             del event['abstract']
 
