@@ -174,7 +174,7 @@ events.append({
 eventid += 1
 
 OPEN_TALKS_DESCRIPTION = (
-    '45 minute slots for talks and discussion panels to be submitted and '
+    '20 minute slots for talks and discussion panels to be submitted and '
     'selected by attendees on-site. This is your chance to present cutting '
     'edge developments or anything that did not make it into the normal '
     'schedule.<br><br>'
@@ -183,85 +183,27 @@ OPEN_TALKS_DESCRIPTION = (
     'with the most votes will be selected and scheduled, so keep an eye '
     'on schedule board!''')
 
-events.append({
-    'title' : 'Open talk #1',
-    'subtitle' : None,
-    'logo' : None,
-    'track' : None,
-    'links' : None,
-    'attachments' : None,
-    'matchby' : 'Open talk #1',
-    # WARNING, delete the below when changing the abstract!
-    'abstract_title' : 'Open talk',
-    'abstract' : OPEN_TALKS_DESCRIPTION,
-    'persons' : ['to be announced'],
-    'language' : 'eng',
-    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
-    'type' : 'talk',
-    'id' : eventid,
-    'slug' : '%i-unconference-1' % eventid,
-})
-eventid += 1
-
-events.append({
-    'title' : 'Open talk #2',
-    'subtitle' : None,
-    'logo' : None,
-    'track' : None,
-    'links' : None,
-    'attachments' : None,
-    'matchby' : 'Open talk #2',
-    # WARNING, delete the below when changing the abstract!
-    'abstract_title' : 'Open talk',
-    'abstract' : OPEN_TALKS_DESCRIPTION,
-    'persons' : ['to be announced'],
-    'language' : 'eng',
-    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
-    'type' : 'talk',
-    'id' : eventid,
-    'slug' : '%i-unconference-2' % eventid,
-})
-eventid += 1
-
-events.append({
-    'title' : 'Open talk #3',
-    'subtitle' : None,
-    'logo' : None,
-    'track' : None,
-    'links' : None,
-    'attachments' : None,
-    'matchby' : 'Open talk #3',
-    # WARNING, delete the below when changing the abstract!
-    'abstract_title' : 'Open talk',
-    'abstract' : OPEN_TALKS_DESCRIPTION,
-    'persons' : ['to be announced'],
-    'language' : 'eng',
-    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
-    'type' : 'talk',
-    'id' : eventid,
-    'slug' : '%i-unconference-3' % eventid,
-})
-eventid += 1
-
-events.append({
-    'title' : 'Open talk #4',
-    'subtitle' : None,
-    'logo' : None,
-    'track' : None,
-    'links' : None,
-    'attachments' : None,
-    'matchby' : 'Open talk #4',
-    # WARNING, delete the below when changing the abstract!
-    'abstract_title' : 'Open talk',
-    'abstract' : OPEN_TALKS_DESCRIPTION,
-    'persons' : ['to be announced'],
-    'language' : 'eng',
-    'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
-    'type' : 'talk',
-    'id' : eventid,
-    'slug' : '%i-unconference-4' % eventid,
-})
-eventid += 1
+for i in range(1,9):
+    events.append({
+        'title' : 'Open talk #%i' % i,
+        'subtitle' : None,
+        'logo' : None,
+        'track' : None,
+        'links' : None,
+        'attachments' : None,
+        'matchby' : 'Open talk #%i' % i,
+        # WARNING, delete the below when changing the abstract!
+        'abstract_title' : 'Open talk',
+        'abstract' : OPEN_TALKS_DESCRIPTION,
+        'persons' : ['to be announced'],
+        'language' : 'eng',
+        'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
+        'type' : 'talk',
+        'id' : eventid,
+        'slug' : '%i-unconference-1' % eventid,
+    })
+    print(events[-1])
+    eventid += 1
 
 
 events.append({
@@ -404,6 +346,7 @@ for l in lines:
     l = l.split('\t')
     if l[0]:
         day_new = int(l[0])
+        print(slot_day)
         if slot_day != day_new:
             slot_start = None
 
