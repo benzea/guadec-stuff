@@ -265,15 +265,15 @@ eventid += 1
 
 
 events.append({
-    'title' : "Keynote 1",
+    'title' : "Keynote: The Battle Over Our Technology",
     'subtitle' : None,
     'logo' : None,
     'track' : None,
     'links' : None,
     'attachments' : None,
     'matchby' : 'Keynote 1',
-    'abstract' : '''Keynote 1: to be announced''',
-    'persons' : ['to be announced'],
+    'abstract' : '''Karen’s keynote will take a broad look at ethics in technology, a topic that is fundamental to many of those involved in GNOME and something that becomes ever more relevant as technology and society develop.''',
+    'persons' : ['Karen Sandler'],
     'recording': { 'license' : 'CC BY-SA 4.0', 'optout' : 'false' },
     'language' : 'eng',
     'type' : 'talk',
